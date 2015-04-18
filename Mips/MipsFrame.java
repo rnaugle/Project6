@@ -3,7 +3,8 @@ import Frame.*;
 import Temp.Label;
 import Util.*;
 import Temp.*;
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 //import Translate.Tree.*;
 public class MipsFrame extends Frame{
 	public Temp FP;
@@ -11,9 +12,43 @@ public class MipsFrame extends Frame{
 	public Label badPtr;
 	public Label badSub;
 	public Label name;
-	public ArrayList<Access> formals;
-	public ArrayList<Access> actuals;
-	public ArrayList<InReg> regs;
+	public LinkedList<Access> formals;
+	public LinkedList<Access> actuals;
+	public LinkedList<InReg> regs;
+	public static Temp[] registers = {
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+		new Temp(),
+	};
 	
 	//public MipsFrame(Label n, int numOfBools){
 	//	this.name = n;
@@ -27,7 +62,7 @@ public class MipsFrame extends Frame{
 		//}
 		this.name = name;
 		FP = new Temp();
-		formals = new ArrayList<Access>();
+		formals = new LinkedList<Access>();
 		badPtr = new Label("_BADPTR");
 		badSub = new Label("_BADSUB");
 	}
@@ -36,19 +71,21 @@ public class MipsFrame extends Frame{
 		//this.name = n;
 		//regs = new ArrayList<InReg>();
 		//for(int i = 0; i < 32; i++){
-		//	regs.add(new InReg(new Temp()));
+		//	(new Temp();
 		//}
 		badPtr = new Label("_BADPTR");
 		badSub = new Label("_BADSUB");
 	}
 	@Override
-	public Frame newFrame(Label name, int k) {
+	public Frame newFrame(Label name) {
 		// TODO Auto-generated method stub
 		this.name = name;
 		FP = new Temp();
-		formals = new ArrayList<Access>();
+		formals = new LinkedList<Access>();
 		return this;
 	}
+	
+	
 	
 	//private MipsFrame(name, k){
 		
@@ -115,6 +152,16 @@ public class MipsFrame extends Frame{
 		writer.print(")\n");
 		
 		
+	}
+	
+	public void procEntryExit1(List<Tree.Stm> traced){
+		return;
+	}
+	public Tree.Stm procEntryExit1(Tree.Stm body){
+		return null;
+	}
+	public List<Assem.Instr> codeGen(List<Tree.Stm> traced) {		
+		return null;
 	}
 	
 

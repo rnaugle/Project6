@@ -1,15 +1,15 @@
-package Translate.Translate;
+package Translate;
 
-import Translate.Temp.Label;
-import Translate.Tree.Stm;
-import Translate.Tree.*;
+import Temp.Label;
+import Tree.Stm;
+import Tree.*;
 
 public class Ex extends Exp{
 	
-	Translate.Tree.Exp exp;
-	Ex(Translate.Tree.Exp e) {exp=e;}
+	Tree.Exp exp;
+	Ex(Tree.Exp e) {exp=e;}
 	
-	Translate.Tree.Exp unEx() {return exp;}
+	Tree.Exp unEx() {return exp;}
 	
 	Stm unNx() { 
 		return new EXP(exp);

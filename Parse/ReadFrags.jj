@@ -4,6 +4,7 @@
 // D.W.Brylow             //
 // 2009 Apr 11            //
 ////////////////////////////
+options{ OUTPUT_DIRECTORY = "Parse";}
 PARSER_BEGIN(ReadFrags)
 package Parse;
 import java.util.HashMap;

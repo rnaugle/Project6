@@ -1,8 +1,8 @@
-package Translate.Translate;
+package Translate;
 
-import Translate.Temp.Label;
-import Translate.Temp.Temp;
-import Translate.Tree.*;
+import Temp.Label;
+import Temp.Temp;
+import Tree.*;
 
 abstract public class Cx extends Exp{
 	
@@ -16,7 +16,7 @@ abstract public class Cx extends Exp{
 	}
 	
 	@Override
-	Translate.Tree.Exp unEx() {
+	Tree.Exp unEx() {
 		Temp r = new Temp();
 		Label t = new Label();
 		Label f = new Label();
@@ -30,7 +30,7 @@ abstract public class Cx extends Exp{
 												new TEMP(r));
 	}
 	@Override
-	Translate.Tree.Stm unNx(){
+	Tree.Stm unNx(){
 		return null;
 	}
 

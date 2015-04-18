@@ -2,7 +2,7 @@ package Translate;
 
 import Temp.Label;
 import Temp.Temp;
-import .Tree.*;
+import Tree.*;
 
 public abstract class Cx extends Exp{
 	
@@ -28,7 +28,7 @@ public abstract class Cx extends Exp{
 												new TEMP(r));
 	}
 	//@Override
-	//Translate.Tree.Stm unNx(){
+	//Tree.Stm unNx(){
 	//	return null;
 	//}
 

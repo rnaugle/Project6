@@ -19,7 +19,7 @@ class MoveCall extends Tree.Stm
 	{
 		return new Tree.MOVE(dst, src.build(kids));
     }
-    public void accept(Tree.IntVisitor v, int i) { throw new Error(); }
+    public void accept(Tree.IntVisitor v) { throw new Error(); }
     public void accept(Tree.CodeVisitor v)       { throw new Error(); }
 }
 
@@ -41,7 +41,7 @@ class ExpCall extends Tree.Stm
 		return new Tree.EXP(call.build(kids));
     }
 
-    public void accept(Tree.IntVisitor v, int i) { throw new Error(); }
+    public void accept(Tree.IntVisitor v) { throw new Error(); }
     public void accept(Tree.CodeVisitor v)       { throw new Error(); }
 }
 

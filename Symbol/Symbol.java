@@ -5,9 +5,8 @@ public class Symbol {
 	private static java.util.Dictionary dict = new java.util.Hashtable();
 	
 	public String toString(){return name;}
-
+	
 	public static Symbol symbol(String n){
-
 		String u = n.intern();
 		Symbol s = (Symbol) dict.get(u);
 		if(s == null){
@@ -15,6 +14,17 @@ public class Symbol {
 			dict.put(u, s);		
 		}
 		return s;
+	}
+
+	public static Temp.Label get(String n){
+
+		String u = n.intern();
+		Symbol s = (Symbol) dict.get(u);
+		if(s == null){
+			s = new Symbol(u);
+			dict.put(u, s);		
+		}
+		return new Temp.Label(s);
 
 	
 	}		

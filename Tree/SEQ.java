@@ -1,18 +1,32 @@
 package Tree;
-
+import java.util.LinkedList;
 public class SEQ extends Stm{
 
-	Stm left;
-	Stm right;
+	public Stm left;
+	public Stm right;
 	
 	public SEQ(Stm l, Stm r){
 		left = l;
 		right = r;
 	}
 
-	@Override
+
 	public void accept(IntVisitor v) {
 		// TODO Auto-generated method stub
 		v.visit(this);
+	}
+	
+	public void accept(CodeVisitor v) {
+		// TODO Auto-generated method stub
+		v.visit(this);
+		
+	}
+	
+	public LinkedList<Exp> kids() {
+		return new LinkedList<Exp>();
+	}
+
+	public Stm build(LinkedList<Exp> exps) {
+		return null;
 	}
 }

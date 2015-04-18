@@ -1,4 +1,4 @@
-package Transla.Temp;
+package Temp;
 
 public class TempList {
 	Temp head;

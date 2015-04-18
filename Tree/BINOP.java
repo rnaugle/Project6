@@ -1,5 +1,5 @@
 package Tree;
-
+import java.util.LinkedList;
 public class BINOP extends Exp{
 
 	public static int PLUS = 0;
@@ -26,11 +26,23 @@ public class BINOP extends Exp{
 	
 	}
 
-	@Override
 	public void accept(IntVisitor v) {
 		// TODO Auto-generated method stub
 		v.visit(this);
 		
+	}
+	
+	public Temp.Temp accept(CodeVisitor v) {
+		// TODO Auto-generated method stub
+		return v.visit(this);
+		
+	}
+	public LinkedList<Exp> kids() {
+		return new LinkedList<Exp>();
+	}
+
+	public Exp build(LinkedList<Exp> exps) {
+		return null;
 	}
 
 

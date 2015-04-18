@@ -1,9 +1,10 @@
 package Tree;
 import java.util.LinkedList;
-public class CONST extends Exp{
-	public int value;
-	public CONST(int v){
-		value = v;
+public class EXP extends Stm{
+
+	public Exp exp;
+	public EXP(Exp e){
+		exp = e;
 	}
 	
 	public void accept(IntVisitor v) {
@@ -11,16 +12,16 @@ public class CONST extends Exp{
 		v.visit(this);
 	}
 	
-	public Temp.Temp accept(CodeVisitor v) {
+	public void accept(CodeVisitor v) {
 		// TODO Auto-generated method stub
-		return v.visit(this);
+		v.visit(this);
 		
 	}
 	public LinkedList<Exp> kids() {
 		return new LinkedList<Exp>();
 	}
 
-	public Exp build(LinkedList<Exp> exps) {
+	public Stm build(LinkedList<Exp> exps) {
 		return null;
 	}
 }

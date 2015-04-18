@@ -1,5 +1,5 @@
 package Tree;
-
+import java.util.LinkedList;
 public class CJUMP extends Stm{
 
 	public static final int	EQ	=0;
@@ -27,7 +27,7 @@ public class CJUMP extends Stm{
 		iffalse = f;
 	}
 	
-	@Override
+	
 	public void accept(IntVisitor v) {
 		v.visit(this);
 		
@@ -37,6 +37,19 @@ public class CJUMP extends Stm{
 	{
 		//TODO
 		return 0;
+	}
+	
+	public void accept(CodeVisitor v) {
+		// TODO Auto-generated method stub
+		v.visit(this);
+		
+	}
+	public LinkedList<Exp> kids() {
+		return new LinkedList<Exp>();
+	}
+
+	public Stm build(LinkedList<Exp> exps) {
+		return null;
 	}
 
 }

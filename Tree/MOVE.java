@@ -1,9 +1,9 @@
 package Tree;
-
+import java.util.LinkedList;
 public class MOVE extends Stm{
 
-	Exp dst;
-	Exp src;
+	public Exp dst;
+	public Exp src;
 	
 	public MOVE(Exp d, Exp s){
 		dst =d;
@@ -11,9 +11,23 @@ public class MOVE extends Stm{
 		
 	}
 
-	@Override
+	
 	public void accept(IntVisitor v) {
 		// TODO Auto-generated method stub
 		v.visit(this);
+	}
+	
+	public void accept(CodeVisitor v) {
+		// TODO Auto-generated method stub
+		v.visit(this);
+		
+	}
+	
+	public LinkedList<Exp> kids() {
+		return new LinkedList<Exp>();
+	}
+
+	public Stm build(LinkedList<Exp> exps) {
+		return null;
 	}
 }

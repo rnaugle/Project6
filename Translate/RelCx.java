@@ -16,7 +16,7 @@ public class RelCx extends Cx{
 	public  int operator;
 	public  Tree.Exp re;
 	
-	public RelCx(int op, .Tree.Exp l, .Tree.Exp r){
+	public RelCx(int op, Tree.Exp l, Tree.Exp r){
 		operator = op;
 		le = l;
 		re = r;

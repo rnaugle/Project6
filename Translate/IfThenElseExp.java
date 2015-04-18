@@ -82,11 +82,11 @@ public class IfThenElseExp extends Exp{
 			return new SEQ(condStm, new SEQ(new LABEL(t), aStm));
 		return new SEQ(condStm, new SEQ(new SEQ(new LABEL(t), aStm), new SEQ(new LABEL(f), bStm)));
 	}
-	public Translate.Tree.Exp unEx() {
-//		Translate.Tree.Exp tExp = a.unEx();
-//		Translate.Tree.Exp fExp = b.unEx();
+	public Tree.Exp unEx() {
+//		Tree.Exp tExp = a.unEx();
+//		Tree.Exp fExp = b.unEx();
 //		Stm c = cond.unCx(t, f);
-//		TEMP r = new TEMP(new Translate.Temp.Temp());
+//		TEMP r = new TEMP(new Temp.Temp());
 //		
 //		SEQ s1 = new SEQ(new LABEL(f), new SEQ(new MOVE(r, fExp), new JUMP(join)));
 //		
@@ -119,11 +119,11 @@ public class IfThenElseExp extends Exp{
 //				return r;
 //			}
 //		}
-//		Translate.Tree.Exp con = cond.unEx();
+//		Tree.Exp con = cond.unEx();
 //		if(con instanceof BINOP && ((BINOP)con).binop == BINOP.BITXOR){
 //			//((BINOP)cond).left.
 //			BINOP bcon = (BINOP) con;
-//			Translate.Tree.Exp conNested = bcon.left;
+//			Tree.Exp conNested = bcon.left;
 //			if ((CJUMP)conNested instanceof CJUMP) {
 //				CJUMP cj = new CJUMP(conNested.relop,conNested.left,conNested.right,t,f);
 //				return new ESEQ(new SEQ(new SEQ(cj,new SEQ(new SEQ(new LABEL(t),
@@ -199,14 +199,14 @@ public class IfThenElseExp extends Exp{
 			bStm = b.unNx();
 			bStm = new SEQ(new SEQ(new LABEL(f), bStm), new JUMP(join));
 		}
-//		Translate.Tree.Exp con = cond.unEx();
+//		Tree.Exp con = cond.unEx();
 	Stm condStm;
 //		System.out.println("HERE");
 //		if(con instanceof BINOP && ((BINOP)con).binop == BINOP.BITXOR){
 //			System.out.println("INSIDE");
 //			//((BINOP)cond).left.
 //			//condStm =  new CJUMP(CJUMP.NE, ((BINOP)con).left, new CONST(0), f ,t);
-//			Translate.Tree.Exp expression = new Ex(((BINOP)con).left);
+//			Tree.Exp expression = new Ex(((BINOP)con).left);
 //			condStm = expression.unCx(f, t);
 //		}
 //		
