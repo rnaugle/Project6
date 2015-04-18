@@ -1,0 +1,54 @@
+Program(
+ AbstractList(
+  ClassDecl(test null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) args))
+     AbstractList(
+      VarDecl(BooleanType n
+       TrueExpr 
+       BOOLEAN)
+      VarDecl(IntegerType m
+       IntegerLiteral(6) 
+       INT))
+     AbstractList(
+      IfStmt(
+       TrueExpr
+       AssignStmt(
+        IdentifierExpr(m)
+        NegExpr(
+         IntegerLiteral(9)))
+       null))
+     IntegerLiteral(0)
+     FUNCTION(main
+      OBJECT(test)
+      RECORD(
+       FIELD(0 args
+        ARRAY(
+         OBJECT(String))))
+      VOID)))
+   CLASS(test
+    null
+    RECORD(
+     FIELD(0 main
+      FUNCTION(main
+       OBJECT(test)
+       RECORD(
+        FIELD(0 args
+         ARRAY(
+          OBJECT(String))))
+       VOID)))
+    RECORD()
+    OBJECT(test
+     RECORD(
+      FIELD(0 main
+       FUNCTION(main
+        OBJECT(test)
+        RECORD(
+         FIELD(0 args
+          ARRAY(
+           OBJECT(String))))
+        VOID)))
+     RECORD())))))

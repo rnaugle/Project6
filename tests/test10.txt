@@ -1,0 +1,16 @@
+//test incorrect referencing error
+
+class test {
+	
+	public static void main (String[] args){
+		boolean n = true;
+		int m = 6;
+		test1 t1 = new test1();
+		int v = t1.add(n,m);
+	}
+}
+class test1 {
+	public int add(int b, int c){
+		return b+c;
+	}
+}

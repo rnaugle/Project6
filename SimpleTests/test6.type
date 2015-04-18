@@ -1,0 +1,131 @@
+Program(
+ AbstractList(
+  ClassDecl(test1 null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) args))
+     AbstractList(
+      VarDecl(BooleanType c
+       FalseExpr 
+       BOOLEAN)
+      VarDecl(IntegerType i null 
+       INT))
+     AbstractList(
+      WhileStmt(
+       IdentifierExpr(c)
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(i)
+          IntegerLiteral(1))))))
+     IntegerLiteral(0)
+     FUNCTION(main
+      OBJECT(test1)
+      RECORD(
+       FIELD(0 args
+        ARRAY(
+         OBJECT(String))))
+      VOID)))
+   CLASS(test1
+    null
+    RECORD(
+     FIELD(0 main
+      FUNCTION(main
+       OBJECT(test1)
+       RECORD(
+        FIELD(0 args
+         ARRAY(
+          OBJECT(String))))
+       VOID)))
+    RECORD()
+    OBJECT(test1
+     RECORD(
+      FIELD(0 main
+       FUNCTION(main
+        OBJECT(test1)
+        RECORD(
+         FIELD(0 args
+          ARRAY(
+           OBJECT(String))))
+        VOID)))
+     RECORD())))
+  ClassDecl(yellow null
+   AbstractList(
+    VarDecl(IntegerType q null 
+     INT)
+    VarDecl(IntegerType t null 
+     INT)
+    VarDecl(IntegerType p null 
+     INT))
+   AbstractList(
+    MethodDecl(IntegerType one
+     AbstractList()
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(t)
+       CallExpr(
+        ThisExpr
+        two
+        AbstractList()
+        1)))
+     AddExpr(
+      IntegerLiteral(6)
+      IntegerLiteral(1))
+     FUNCTION(one
+      OBJECT(yellow)
+      RECORD()
+      INT))
+    MethodDecl(IntegerType two
+     AbstractList()
+     AbstractList()
+     AbstractList(
+      XinuCallStmt(print
+       AbstractList(
+        StringLiteral("Green"))))
+     IntegerLiteral(7)
+     FUNCTION(two
+      OBJECT(yellow)
+      RECORD()
+      INT)))
+   CLASS(yellow
+    null
+    RECORD(
+     FIELD(0 one
+      FUNCTION(one
+       OBJECT(yellow)
+       RECORD()
+       INT))
+     FIELD(1 two
+      FUNCTION(two
+       OBJECT(yellow)
+       RECORD()
+       INT)))
+    RECORD(
+     FIELD(0 q
+      INT)
+     FIELD(1 t
+      INT)
+     FIELD(2 p
+      INT))
+    OBJECT(yellow
+     RECORD(
+      FIELD(0 one
+       FUNCTION(one
+        OBJECT(yellow)
+        RECORD()
+        INT))
+      FIELD(1 two
+       FUNCTION(two
+        OBJECT(yellow)
+        RECORD()
+        INT)))
+     RECORD(
+      FIELD(0 q
+       INT)
+      FIELD(1 t
+       INT)
+      FIELD(2 p
+       INT)))))))

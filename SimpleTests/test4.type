@@ -1,0 +1,104 @@
+Program(
+ AbstractList(
+  ClassDecl(Main null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) args))
+     AbstractList()
+     AbstractList()
+     IntegerLiteral(0)
+     FUNCTION(main
+      OBJECT(Main)
+      RECORD(
+       FIELD(0 args
+        ARRAY(
+         OBJECT(String))))
+      VOID)))
+   CLASS(Main
+    null
+    RECORD(
+     FIELD(0 main
+      FUNCTION(main
+       OBJECT(Main)
+       RECORD(
+        FIELD(0 args
+         ARRAY(
+          OBJECT(String))))
+       VOID)))
+    RECORD()
+    OBJECT(Main
+     RECORD(
+      FIELD(0 main
+       FUNCTION(main
+        OBJECT(Main)
+        RECORD(
+         FIELD(0 args
+          ARRAY(
+           OBJECT(String))))
+        VOID)))
+     RECORD())))
+  ClassDecl(Food null
+   AbstractList()
+   AbstractList(
+    MethodDecl(IntegerType testMethod
+     AbstractList()
+     AbstractList()
+     AbstractList()
+     IntegerLiteral(0)
+     FUNCTION(testMethod
+      OBJECT(Food)
+      RECORD()
+      INT)))
+   CLASS(Food
+    null
+    RECORD(
+     FIELD(0 testMethod
+      FUNCTION(testMethod
+       OBJECT(Food)
+       RECORD()
+       INT)))
+    RECORD()
+    OBJECT(Food
+     RECORD(
+      FIELD(0 testMethod
+       FUNCTION(testMethod
+        OBJECT(Food)
+        RECORD()
+        INT)))
+     RECORD())))
+  ClassDecl(Pizza Food
+   AbstractList()
+   AbstractList(
+    MethodDecl(IntegerType foo
+     AbstractList()
+     AbstractList()
+     AbstractList()
+     IntegerLiteral(2345)
+     FUNCTION(foo
+      OBJECT(Pizza)
+      RECORD()
+      INT)))
+   CLASS(Pizza
+    Food
+    RECORD(
+     FIELD(0 foo
+      FUNCTION(foo
+       OBJECT(Pizza)
+       RECORD()
+       INT)))
+    RECORD()
+    OBJECT(Pizza
+     RECORD(
+      FIELD(0 testMethod
+       FUNCTION(testMethod
+        OBJECT(Food)
+        RECORD()
+        INT))
+      FIELD(1 foo
+       FUNCTION(foo
+        OBJECT(Pizza)
+        RECORD()
+        INT)))
+     RECORD())))))

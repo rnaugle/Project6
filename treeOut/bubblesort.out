@@ -1,0 +1,244 @@
+Program(
+ AbstractList(
+  ClassDecl(BubbleSort null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) a))
+     AbstractList()
+     AbstractList(
+      XinuCallStmt(printint
+       AbstractList(
+        CallExpr(
+         NewObjectExpr(IdentifierType(BBS))
+         Start
+         AbstractList(
+          IntegerLiteral(10))))))
+     IntegerLiteral(0))))
+  ClassDecl(BBS null
+   AbstractList(
+    VarDecl(ArrayType(IntegerType) number null)
+    VarDecl(IntegerType size null))
+   AbstractList(
+    MethodDecl(IntegerType Start
+     AbstractList(
+      Formal(IntegerType sz))
+     AbstractList(
+      VarDecl(IntegerType aux01 null))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(aux01)
+       CallExpr(
+        ThisExpr
+        Init
+        AbstractList(
+         IdentifierExpr(sz))))
+      AssignStmt(
+       IdentifierExpr(aux01)
+       CallExpr(
+        ThisExpr
+        Print
+        AbstractList()))
+      XinuCallStmt(printint
+       AbstractList(
+        IntegerLiteral(99999)))
+      AssignStmt(
+       IdentifierExpr(aux01)
+       CallExpr(
+        ThisExpr
+        Sort
+        AbstractList()))
+      AssignStmt(
+       IdentifierExpr(aux01)
+       CallExpr(
+        ThisExpr
+        Print
+        AbstractList())))
+     IntegerLiteral(0))
+    MethodDecl(IntegerType Sort
+     AbstractList()
+     AbstractList(
+      VarDecl(IntegerType nt null)
+      VarDecl(IntegerType i null)
+      VarDecl(IntegerType aux02 null)
+      VarDecl(IntegerType aux04 null)
+      VarDecl(IntegerType aux05 null)
+      VarDecl(IntegerType aux06 null)
+      VarDecl(IntegerType aux07 null)
+      VarDecl(IntegerType j null)
+      VarDecl(IntegerType t null))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(i)
+       SubExpr(
+        IdentifierExpr(size)
+        IntegerLiteral(1)))
+      AssignStmt(
+       IdentifierExpr(aux02)
+       SubExpr(
+        IntegerLiteral(0)
+        IntegerLiteral(1)))
+      WhileStmt(
+       LesserExpr(
+        IdentifierExpr(aux02)
+        IdentifierExpr(i))
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(j)
+          IntegerLiteral(1))
+         WhileStmt(
+          LesserExpr(
+           IdentifierExpr(j)
+           AddExpr(
+            IdentifierExpr(i)
+            IntegerLiteral(1)))
+          BlockStmt(
+           AbstractList(
+            AssignStmt(
+             IdentifierExpr(aux07)
+             SubExpr(
+              IdentifierExpr(j)
+              IntegerLiteral(1)))
+            AssignStmt(
+             IdentifierExpr(aux04)
+             ArrayExpr(
+              IdentifierExpr(number)
+              IdentifierExpr(aux07)))
+            AssignStmt(
+             IdentifierExpr(aux05)
+             ArrayExpr(
+              IdentifierExpr(number)
+              IdentifierExpr(j)))
+            IfStmt(
+             LesserExpr(
+              IdentifierExpr(aux05)
+              IdentifierExpr(aux04))
+             BlockStmt(
+              AbstractList(
+               AssignStmt(
+                IdentifierExpr(aux06)
+                SubExpr(
+                 IdentifierExpr(j)
+                 IntegerLiteral(1)))
+               AssignStmt(
+                IdentifierExpr(t)
+                ArrayExpr(
+                 IdentifierExpr(number)
+                 IdentifierExpr(aux06)))
+               AssignStmt(
+                ArrayExpr(
+                 IdentifierExpr(number)
+                 IdentifierExpr(aux06))
+                ArrayExpr(
+                 IdentifierExpr(number)
+                 IdentifierExpr(j)))
+               AssignStmt(
+                ArrayExpr(
+                 IdentifierExpr(number)
+                 IdentifierExpr(j))
+                IdentifierExpr(t))))
+             AssignStmt(
+              IdentifierExpr(nt)
+              IntegerLiteral(0)))
+            AssignStmt(
+             IdentifierExpr(j)
+             AddExpr(
+              IdentifierExpr(j)
+              IntegerLiteral(1))))))
+         AssignStmt(
+          IdentifierExpr(i)
+          SubExpr(
+           IdentifierExpr(i)
+           IntegerLiteral(1)))))))
+     IntegerLiteral(0))
+    MethodDecl(IntegerType Print
+     AbstractList()
+     AbstractList(
+      VarDecl(IntegerType j null))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(j)
+       IntegerLiteral(0))
+      WhileStmt(
+       LesserExpr(
+        IdentifierExpr(j)
+        IdentifierExpr(size))
+       BlockStmt(
+        AbstractList(
+         XinuCallStmt(printint
+          AbstractList(
+           ArrayExpr(
+            IdentifierExpr(number)
+            IdentifierExpr(j))))
+         AssignStmt(
+          IdentifierExpr(j)
+          AddExpr(
+           IdentifierExpr(j)
+           IntegerLiteral(1)))))))
+     IntegerLiteral(0))
+    MethodDecl(IntegerType Init
+     AbstractList(
+      Formal(IntegerType sz))
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(size)
+       IdentifierExpr(sz))
+      AssignStmt(
+       IdentifierExpr(number)
+       NewArrayExpr(IntegerType
+        AbstractList(
+         IdentifierExpr(sz))))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(0))
+       IntegerLiteral(20))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(1))
+       IntegerLiteral(7))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(2))
+       IntegerLiteral(12))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(3))
+       IntegerLiteral(18))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(4))
+       IntegerLiteral(2))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(5))
+       IntegerLiteral(11))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(6))
+       IntegerLiteral(6))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(7))
+       IntegerLiteral(9))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(8))
+       IntegerLiteral(19))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(9))
+       IntegerLiteral(5)))
+     IntegerLiteral(0))))))

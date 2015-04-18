@@ -1,0 +1,36 @@
+Program(
+ AbstractList(
+  ClassDecl(Main null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) args))
+     AbstractList(
+      VarDecl(IntegerType f null))
+     AbstractList()
+     IntegerLiteral(0))))
+  ClassDecl(Mario null
+   AbstractList()
+   AbstractList())
+  ClassDecl(Mario null
+   AbstractList()
+   AbstractList())
+  ClassDecl(Luigi null
+   AbstractList()
+   AbstractList())
+  ClassDecl(Luigi null
+   AbstractList()
+   AbstractList())
+  ClassDecl(Yellow Red
+   AbstractList()
+   AbstractList())
+  ClassDecl(Blue Green
+   AbstractList()
+   AbstractList())
+  ClassDecl(Dog Cat
+   AbstractList()
+   AbstractList())
+  ClassDecl(Cat Dog
+   AbstractList()
+   AbstractList())))

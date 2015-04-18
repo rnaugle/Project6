@@ -1,0 +1,30 @@
+DataFrag(
+	.data
+test1_vtable:
+	.word test1.main
+
+)
+ProcFrag(
+MipsFrame(
+main:
+Formals(InReg(t32)
+	InReg(t33)
+	)
+Actuals(InReg(t4)
+	InReg(t5)
+	)
+BadPtr(_BADPTR)
+BadSub(_BADSUB)
+)
+SEQ(
+ SEQ(
+  MOVE(
+   TEMP(t34)
+   CONST(0))
+  MOVE(
+   TEMP(t34)
+   CONST(6)))
+ MOVE(
+  TEMP(t2)
+  CONST(0)))
+)

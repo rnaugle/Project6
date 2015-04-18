@@ -1,0 +1,32 @@
+Program(
+ AbstractList(
+  ClassDecl(Main null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) args))
+     AbstractList(
+      VarDecl(BooleanType b
+      FalseExpr)
+      VarDecl(BooleanType c
+      TrueExpr)
+      VarDecl(IntegerType k
+      IntegerLiteral(8))
+      VarDecl(IntegerType j
+      IntegerLiteral(4)))
+     AbstractList(
+      XinuCallStmt(printint
+       AbstractList(
+        IdentifierExpr(k)))
+      IfStmt(
+       LesserExpr(
+        IdentifierExpr(j)
+        IdentifierExpr(k))
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(k)
+          IntegerLiteral(5))))
+       null))
+     IntegerLiteral(0))))))

@@ -1,0 +1,66 @@
+DataFrag(
+	.data
+Main_vtable:
+	.word Main.main
+
+)
+ProcFrag(
+MipsFrame(
+main:
+Formals(InReg(t32)
+	InReg(t33)
+	)
+Actuals(InReg(t4)
+	InReg(t5)
+	)
+BadPtr(_BADPTR)
+BadSub(_BADSUB)
+)
+SEQ(
+ SEQ(
+  SEQ(
+   SEQ(
+    MOVE(
+     TEMP(t34)
+     CONST(0))
+    MOVE(
+     TEMP(t35)
+     CONST(1)))
+   MOVE(
+    TEMP(t36)
+    CONST(0)))
+  SEQ(
+   SEQ(
+    SEQ(
+     CJUMP(NE
+      TEMP(t35)
+      CONST(0)
+      L0 L3)
+     SEQ(
+      LABEL(L3)
+      CJUMP(NE
+       TEMP(t34)
+       CONST(0)
+       L0 L1)))
+    SEQ(
+     SEQ(
+      SEQ(
+       LABEL(L0)
+       MOVE(
+        TEMP(t36)
+        CONST(6)))
+      JUMP(
+       NAME(L2)))
+     SEQ(
+      SEQ(
+       LABEL(L1)
+       MOVE(
+        TEMP(t36)
+        CONST(7)))
+      JUMP(
+       NAME(L2)))))
+   LABEL(L2)))
+ MOVE(
+  TEMP(t2)
+  CONST(0)))
+)

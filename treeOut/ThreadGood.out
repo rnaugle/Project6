@@ -1,0 +1,181 @@
+Program(
+ AbstractList(
+  ClassDecl(Main null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) args))
+     AbstractList(
+      VarDecl(IntegerType f null)
+      VarDecl(IdentifierType(Thread1) myThread1
+      NewObjectExpr(IdentifierType(Thread1)))
+      VarDecl(IdentifierType(Thread2) myThread2
+      NewObjectExpr(IdentifierType(Thread2)))
+      VarDecl(IdentifierType(Data) ddd
+      NewObjectExpr(IdentifierType(Data)))
+      VarDecl(IdentifierType(Data) tempD null))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(f)
+       CallExpr(
+        IdentifierExpr(ddd)
+        set_field
+        AbstractList(
+         IntegerLiteral(0))))
+      AssignStmt(
+       IdentifierExpr(tempD)
+       CallExpr(
+        IdentifierExpr(myThread1)
+        setData
+        AbstractList(
+         IdentifierExpr(ddd))))
+      AssignStmt(
+       IdentifierExpr(tempD)
+       CallExpr(
+        IdentifierExpr(myThread2)
+        setData
+        AbstractList(
+         IdentifierExpr(ddd))))
+      XinuCallStmt(threadCreate
+       AbstractList(
+        IdentifierExpr(myThread2)))
+      XinuCallStmt(threadCreate
+       AbstractList(
+        IdentifierExpr(myThread1))))
+     IntegerLiteral(0))))
+  ThreadDecl(Thread1 Thread
+   AbstractList(
+    VarDecl(IdentifierType(Data) d null)
+    VarDecl(IntegerType x null))
+   AbstractList(
+    VoidDecl(run
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(x)
+       CallExpr(
+        IdentifierExpr(d)
+        increment_one
+        AbstractList()))
+      AssignStmt(
+       IdentifierExpr(x)
+       CallExpr(
+        IdentifierExpr(d)
+        field_print
+        AbstractList()))))
+    MethodDecl(IdentifierType(Data) setData
+     AbstractList(
+      Formal(IdentifierType(Data) dd))
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(d)
+       IdentifierExpr(dd)))
+     IdentifierExpr(d))))
+  ThreadDecl(Thread2 Thread
+   AbstractList(
+    VarDecl(IdentifierType(Data) d null)
+    VarDecl(IntegerType x null))
+   AbstractList(
+    VoidDecl(run
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(x)
+       CallExpr(
+        IdentifierExpr(d)
+        increment_ten
+        AbstractList()))
+      AssignStmt(
+       IdentifierExpr(x)
+       CallExpr(
+        IdentifierExpr(d)
+        field_print
+        AbstractList()))))
+    MethodDecl(IdentifierType(Data) setData
+     AbstractList(
+      Formal(IdentifierType(Data) dd))
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(d)
+       IdentifierExpr(dd)))
+     IdentifierExpr(d))))
+  ClassDecl(Data null
+   AbstractList(
+    VarDecl(IntegerType field null))
+   AbstractList(
+    MethodDecl(IntegerType set_field
+     AbstractList(
+      Formal(IntegerType x))
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(field)
+       IdentifierExpr(x)))
+     IdentifierExpr(field))
+    MethodDecl(IntegerType synchronized increment_one
+     AbstractList()
+     AbstractList(
+      VarDecl(IntegerType temp
+      IdentifierExpr(field)))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(temp)
+       AddExpr(
+        IdentifierExpr(temp)
+        IntegerLiteral(1)))
+      AssignStmt(
+       IdentifierExpr(temp)
+       CallExpr(
+        ThisExpr
+        write
+        AbstractList(
+         IdentifierExpr(temp)))))
+     IdentifierExpr(field))
+    MethodDecl(IntegerType synchronized increment_ten
+     AbstractList()
+     AbstractList(
+      VarDecl(IntegerType temp
+      IdentifierExpr(field)))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(temp)
+       AddExpr(
+        IdentifierExpr(temp)
+        IntegerLiteral(10)))
+      AssignStmt(
+       IdentifierExpr(temp)
+       CallExpr(
+        ThisExpr
+        write
+        AbstractList(
+         IdentifierExpr(temp)))))
+     IdentifierExpr(field))
+    MethodDecl(IntegerType synchronized write
+     AbstractList(
+      Formal(IntegerType x))
+     AbstractList()
+     AbstractList(
+      XinuCallStmt(yield
+       AbstractList())
+      AssignStmt(
+       IdentifierExpr(field)
+       IdentifierExpr(x)))
+     IdentifierExpr(field))
+    MethodDecl(IntegerType synchronized field_print
+     AbstractList()
+     AbstractList(
+      VarDecl(IntegerType temp
+      IdentifierExpr(field)))
+     AbstractList(
+      XinuCallStmt(yield
+       AbstractList())
+      XinuCallStmt(print
+       AbstractList(
+        StringLiteral("field = ")))
+      XinuCallStmt(printint
+       AbstractList(
+        IdentifierExpr(temp))))
+     IdentifierExpr(field))))))

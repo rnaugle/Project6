@@ -1,0 +1,20 @@
+Program(
+ AbstractList(
+  ClassDecl(test null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) args))
+     AbstractList()
+     AbstractList()
+     IntegerLiteral(0))))
+  ClassDecl(cat null
+   AbstractList(
+    VarDecl(IntegerType r null))
+   AbstractList(
+    MethodDecl(IntegerType eat
+     AbstractList()
+     AbstractList()
+     AbstractList()
+     IntegerLiteral(3))))))

@@ -1,0 +1,12 @@
+class test1{
+
+	public static void main(String[] args){
+		boolean k = true;
+		if(k & true)
+			k = false;
+		else
+			k = true;
+	}
+
+
+}

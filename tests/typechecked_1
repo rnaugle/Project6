@@ -1,0 +1,73 @@
+Program(
+ AbstractList(
+  ClassDecl(test null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) args))
+     AbstractList(
+      VarDecl(IntegerType b
+       IntegerLiteral(5) 
+       INT)
+      VarDecl(IntegerType c
+       IntegerLiteral(6) 
+       INT))
+     AbstractList(
+      IfStmt(
+       LesserExpr(
+        IdentifierExpr(b)
+        IdentifierExpr(c))
+       XinuCallStmt(print
+        AbstractList(
+         StringLiteral("b < c")))
+       XinuCallStmt(print
+        AbstractList(
+         StringLiteral("b >= c")))))
+     IntegerLiteral(0)
+     FUNCTION(main
+      OBJECT(test)
+      RECORD(
+       FIELD(0 args
+        ARRAY(
+         OBJECT(String))))
+      VOID)))
+   CLASS(test
+    null
+    RECORD(
+     FIELD(0 main
+      FUNCTION(main
+       OBJECT(test)
+       RECORD(
+        FIELD(0 args
+         ARRAY(
+          OBJECT(String))))
+       VOID)))
+    RECORD()
+    OBJECT(test
+     RECORD(
+      FIELD(0 main
+       FUNCTION(main
+        OBJECT(test)
+        RECORD(
+         FIELD(0 args
+          ARRAY(
+           OBJECT(String))))
+        VOID)))
+     RECORD())))
+  ClassDecl(cat null
+   AbstractList(
+    VarDecl(IntegerType r null 
+     INT))
+   AbstractList()
+   CLASS(cat
+    null
+    RECORD()
+    RECORD(
+     FIELD(0 r
+      INT))
+    OBJECT(cat
+     RECORD()
+     RECORD(
+      FIELD(0 r
+       INT)))))))

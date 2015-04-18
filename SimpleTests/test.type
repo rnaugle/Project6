@@ -1,0 +1,99 @@
+Program(
+ AbstractList(
+  ClassDecl(test1 null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) args))
+     AbstractList(
+      VarDecl(IdentifierType(yellow) y
+       NewObjectExpr(IdentifierType(yellow)) 
+       OBJECT(yellow))
+      VarDecl(IntegerType k
+       CallExpr(
+        IdentifierExpr(y)
+        one
+        AbstractList()
+        0) 
+       INT))
+     AbstractList()
+     IntegerLiteral(0)
+     FUNCTION(main
+      OBJECT(test1)
+      RECORD(
+       FIELD(0 args
+        ARRAY(
+         OBJECT(String))))
+      VOID)))
+   CLASS(test1
+    null
+    RECORD(
+     FIELD(0 main
+      FUNCTION(main
+       OBJECT(test1)
+       RECORD(
+        FIELD(0 args
+         ARRAY(
+          OBJECT(String))))
+       VOID)))
+    RECORD()
+    OBJECT(test1
+     RECORD(
+      FIELD(0 main
+       FUNCTION(main
+        OBJECT(test1)
+        RECORD(
+         FIELD(0 args
+          ARRAY(
+           OBJECT(String))))
+        VOID)))
+     RECORD())))
+  ClassDecl(yellow null
+   AbstractList()
+   AbstractList(
+    MethodDecl(IntegerType one
+     AbstractList()
+     AbstractList()
+     AbstractList()
+     IntegerLiteral(6)
+     FUNCTION(one
+      OBJECT(yellow)
+      RECORD()
+      INT))
+    MethodDecl(IntegerType two
+     AbstractList()
+     AbstractList()
+     AbstractList()
+     IntegerLiteral(7)
+     FUNCTION(two
+      OBJECT(yellow)
+      RECORD()
+      INT)))
+   CLASS(yellow
+    null
+    RECORD(
+     FIELD(0 one
+      FUNCTION(one
+       OBJECT(yellow)
+       RECORD()
+       INT))
+     FIELD(1 two
+      FUNCTION(two
+       OBJECT(yellow)
+       RECORD()
+       INT)))
+    RECORD()
+    OBJECT(yellow
+     RECORD(
+      FIELD(0 one
+       FUNCTION(one
+        OBJECT(yellow)
+        RECORD()
+        INT))
+      FIELD(1 two
+       FUNCTION(two
+        OBJECT(yellow)
+        RECORD()
+        INT)))
+     RECORD())))))

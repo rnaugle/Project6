@@ -1,0 +1,14 @@
+package Translate.Absyn;
+
+public class NotExpr extends Expr{
+	public Expr e1;
+	public NotExpr(Expr e1){
+		this.e1 = e1;
+	}
+	
+	public String toString()
+	  {   return "";   }
+	
+	public void accept(Translate.Visit.Visitor v)      {          v.visit(this);   }
+	public Translate.Types.Type accept(Translate.Visit.Visitor2 v) { v.visit(this); }
+}

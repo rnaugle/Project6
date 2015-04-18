@@ -1,0 +1,20 @@
+class test {
+	public static void main (String[] args){
+		int b = 5;
+		int c = 6;
+		if (b <  c)
+			Xinu.print("b < c");
+		else
+			Xinu.print("b >= c");
+	}
+}
+class cat {
+	int r;
+		
+	public int set()
+	{
+		int r = 7;
+		Xinu.print(r);
+		return r;
+	}
+}

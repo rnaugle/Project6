@@ -1,0 +1,234 @@
+Program(
+ AbstractList(
+  ClassDecl(Main null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) args))
+     AbstractList(
+      VarDecl(IntegerType k null 
+       INT))
+     AbstractList()
+     IntegerLiteral(0)
+     FUNCTION(main
+      OBJECT(Main)
+      RECORD(
+       FIELD(0 args
+        ARRAY(
+         OBJECT(String))))
+      VOID)))
+   CLASS(Main
+    null
+    RECORD(
+     FIELD(0 main
+      FUNCTION(main
+       OBJECT(Main)
+       RECORD(
+        FIELD(0 args
+         ARRAY(
+          OBJECT(String))))
+       VOID)))
+    RECORD()
+    OBJECT(Main
+     RECORD(
+      FIELD(0 main
+       FUNCTION(main
+        OBJECT(Main)
+        RECORD(
+         FIELD(0 args
+          ARRAY(
+           OBJECT(String))))
+        VOID)))
+     RECORD())))
+  ClassDecl(yellow null
+   AbstractList()
+   AbstractList(
+    MethodDecl(IntegerType foo
+     AbstractList(
+      Formal(IntegerType a)
+      Formal(IntegerType b)
+      Formal(IntegerType c)
+      Formal(IntegerType d)
+      Formal(IntegerType e))
+     AbstractList()
+     AbstractList()
+     IntegerLiteral(6)
+     FUNCTION(foo
+      OBJECT(yellow)
+      RECORD(
+       FIELD(0 a
+        INT)
+       FIELD(1 b
+        INT)
+       FIELD(2 c
+        INT)
+       FIELD(3 d
+        INT)
+       FIELD(4 e
+        INT))
+      INT)))
+   CLASS(yellow
+    null
+    RECORD(
+     FIELD(0 foo
+      FUNCTION(foo
+       OBJECT(yellow)
+       RECORD(
+        FIELD(0 a
+         INT)
+        FIELD(1 b
+         INT)
+        FIELD(2 c
+         INT)
+        FIELD(3 d
+         INT)
+        FIELD(4 e
+         INT))
+       INT)))
+    RECORD()
+    OBJECT(yellow
+     RECORD(
+      FIELD(0 foo
+       FUNCTION(foo
+        OBJECT(yellow)
+        RECORD(
+         FIELD(0 a
+          INT)
+         FIELD(1 b
+          INT)
+         FIELD(2 c
+          INT)
+         FIELD(3 d
+          INT)
+         FIELD(4 e
+          INT))
+        INT)))
+     RECORD())))
+  ClassDecl(blue null
+   AbstractList()
+   AbstractList(
+    MethodDecl(IntegerType bar
+     AbstractList(
+      Formal(IntegerType a)
+      Formal(IntegerType b)
+      Formal(IntegerType c)
+      Formal(IntegerType d)
+      Formal(IntegerType e)
+      Formal(IntegerType f)
+      Formal(IntegerType g)
+      Formal(IntegerType h)
+      Formal(IntegerType i)
+      Formal(IntegerType j)
+      Formal(IntegerType k)
+      Formal(IntegerType l)
+      Formal(IntegerType m)
+      Formal(IntegerType n))
+     AbstractList()
+     AbstractList()
+     IntegerLiteral(7)
+     FUNCTION(bar
+      OBJECT(blue)
+      RECORD(
+       FIELD(0 a
+        INT)
+       FIELD(1 b
+        INT)
+       FIELD(2 c
+        INT)
+       FIELD(3 d
+        INT)
+       FIELD(4 e
+        INT)
+       FIELD(5 f
+        INT)
+       FIELD(6 g
+        INT)
+       FIELD(7 h
+        INT)
+       FIELD(8 i
+        INT)
+       FIELD(9 j
+        INT)
+       FIELD(10 k
+        INT)
+       FIELD(11 l
+        INT)
+       FIELD(12 m
+        INT)
+       FIELD(13 n
+        INT))
+      INT)))
+   CLASS(blue
+    null
+    RECORD(
+     FIELD(0 bar
+      FUNCTION(bar
+       OBJECT(blue)
+       RECORD(
+        FIELD(0 a
+         INT)
+        FIELD(1 b
+         INT)
+        FIELD(2 c
+         INT)
+        FIELD(3 d
+         INT)
+        FIELD(4 e
+         INT)
+        FIELD(5 f
+         INT)
+        FIELD(6 g
+         INT)
+        FIELD(7 h
+         INT)
+        FIELD(8 i
+         INT)
+        FIELD(9 j
+         INT)
+        FIELD(10 k
+         INT)
+        FIELD(11 l
+         INT)
+        FIELD(12 m
+         INT)
+        FIELD(13 n
+         INT))
+       INT)))
+    RECORD()
+    OBJECT(blue
+     RECORD(
+      FIELD(0 bar
+       FUNCTION(bar
+        OBJECT(blue)
+        RECORD(
+         FIELD(0 a
+          INT)
+         FIELD(1 b
+          INT)
+         FIELD(2 c
+          INT)
+         FIELD(3 d
+          INT)
+         FIELD(4 e
+          INT)
+         FIELD(5 f
+          INT)
+         FIELD(6 g
+          INT)
+         FIELD(7 h
+          INT)
+         FIELD(8 i
+          INT)
+         FIELD(9 j
+          INT)
+         FIELD(10 k
+          INT)
+         FIELD(11 l
+          INT)
+         FIELD(12 m
+          INT)
+         FIELD(13 n
+          INT))
+        INT)))
+     RECORD())))))

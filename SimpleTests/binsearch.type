@@ -1,0 +1,608 @@
+Program(
+ AbstractList(
+  ClassDecl(BinarySearch null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) a))
+     AbstractList()
+     AbstractList(
+      XinuCallStmt(printint
+       AbstractList(
+        CallExpr(
+         NewObjectExpr(IdentifierType(BS))
+         Start
+         AbstractList(
+          IntegerLiteral(20))
+         0))))
+     IntegerLiteral(0)
+     FUNCTION(main
+      OBJECT(BinarySearch)
+      RECORD(
+       FIELD(0 a
+        ARRAY(
+         OBJECT(String))))
+      VOID)))
+   CLASS(BinarySearch
+    null
+    RECORD(
+     FIELD(0 main
+      FUNCTION(main
+       OBJECT(BinarySearch)
+       RECORD(
+        FIELD(0 a
+         ARRAY(
+          OBJECT(String))))
+       VOID)))
+    RECORD()
+    OBJECT(BinarySearch
+     RECORD(
+      FIELD(0 main
+       FUNCTION(main
+        OBJECT(BinarySearch)
+        RECORD(
+         FIELD(0 a
+          ARRAY(
+           OBJECT(String))))
+        VOID)))
+     RECORD())))
+  ClassDecl(BS null
+   AbstractList(
+    VarDecl(ArrayType(IntegerType) number null 
+     ARRAY(
+      INT))
+    VarDecl(IntegerType size null 
+     INT))
+   AbstractList(
+    MethodDecl(IntegerType Start
+     AbstractList(
+      Formal(IntegerType sz))
+     AbstractList(
+      VarDecl(IntegerType aux01 null 
+       INT)
+      VarDecl(IntegerType aux02 null 
+       INT))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(aux01)
+       CallExpr(
+        ThisExpr
+        Init
+        AbstractList(
+         IdentifierExpr(sz))
+        5))
+      AssignStmt(
+       IdentifierExpr(aux02)
+       CallExpr(
+        ThisExpr
+        Print
+        AbstractList()
+        4))
+      IfStmt(
+       CallExpr(
+        ThisExpr
+        Search
+        AbstractList(
+         IntegerLiteral(8))
+        1)
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(1)))
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(0))))
+      IfStmt(
+       CallExpr(
+        ThisExpr
+        Search
+        AbstractList(
+         IntegerLiteral(19))
+        1)
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(1)))
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(0))))
+      IfStmt(
+       CallExpr(
+        ThisExpr
+        Search
+        AbstractList(
+         IntegerLiteral(20))
+        1)
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(1)))
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(0))))
+      IfStmt(
+       CallExpr(
+        ThisExpr
+        Search
+        AbstractList(
+         IntegerLiteral(21))
+        1)
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(1)))
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(0))))
+      IfStmt(
+       CallExpr(
+        ThisExpr
+        Search
+        AbstractList(
+         IntegerLiteral(37))
+        1)
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(1)))
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(0))))
+      IfStmt(
+       CallExpr(
+        ThisExpr
+        Search
+        AbstractList(
+         IntegerLiteral(38))
+        1)
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(1)))
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(0))))
+      IfStmt(
+       CallExpr(
+        ThisExpr
+        Search
+        AbstractList(
+         IntegerLiteral(39))
+        1)
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(1)))
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(0))))
+      IfStmt(
+       CallExpr(
+        ThisExpr
+        Search
+        AbstractList(
+         IntegerLiteral(50))
+        1)
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(1)))
+       XinuCallStmt(printint
+        AbstractList(
+         IntegerLiteral(0)))))
+     IntegerLiteral(999)
+     FUNCTION(Start
+      OBJECT(BS)
+      RECORD(
+       FIELD(0 sz
+        INT))
+      INT))
+    MethodDecl(BooleanType Search
+     AbstractList(
+      Formal(IntegerType num))
+     AbstractList(
+      VarDecl(BooleanType bs01 null 
+       BOOLEAN)
+      VarDecl(IntegerType right null 
+       INT)
+      VarDecl(IntegerType left null 
+       INT)
+      VarDecl(BooleanType var_cont null 
+       BOOLEAN)
+      VarDecl(IntegerType medium null 
+       INT)
+      VarDecl(IntegerType aux01 null 
+       INT)
+      VarDecl(IntegerType nt null 
+       INT))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(aux01)
+       IntegerLiteral(0))
+      AssignStmt(
+       IdentifierExpr(bs01)
+       FalseExpr)
+      AssignStmt(
+       IdentifierExpr(right)
+       FieldExpr(
+        IdentifierExpr(number)
+        length
+        0))
+      AssignStmt(
+       IdentifierExpr(right)
+       SubExpr(
+        IdentifierExpr(right)
+        IntegerLiteral(1)))
+      AssignStmt(
+       IdentifierExpr(left)
+       IntegerLiteral(0))
+      AssignStmt(
+       IdentifierExpr(var_cont)
+       TrueExpr)
+      WhileStmt(
+       IdentifierExpr(var_cont)
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(medium)
+          AddExpr(
+           IdentifierExpr(left)
+           IdentifierExpr(right)))
+         AssignStmt(
+          IdentifierExpr(medium)
+          CallExpr(
+           ThisExpr
+           Div
+           AbstractList(
+            IdentifierExpr(medium))
+           2))
+         AssignStmt(
+          IdentifierExpr(aux01)
+          ArrayExpr(
+           IdentifierExpr(number)
+           IdentifierExpr(medium)))
+         IfStmt(
+          LesserExpr(
+           IdentifierExpr(num)
+           IdentifierExpr(aux01))
+          AssignStmt(
+           IdentifierExpr(right)
+           SubExpr(
+            IdentifierExpr(medium)
+            IntegerLiteral(1)))
+          AssignStmt(
+           IdentifierExpr(left)
+           AddExpr(
+            IdentifierExpr(medium)
+            IntegerLiteral(1))))
+         IfStmt(
+          CallExpr(
+           ThisExpr
+           Compare
+           AbstractList(
+            IdentifierExpr(aux01)
+            IdentifierExpr(num))
+           3)
+          AssignStmt(
+           IdentifierExpr(var_cont)
+           FalseExpr)
+          AssignStmt(
+           IdentifierExpr(var_cont)
+           TrueExpr))
+         IfStmt(
+          LesserExpr(
+           IdentifierExpr(right)
+           IdentifierExpr(left))
+          AssignStmt(
+           IdentifierExpr(var_cont)
+           FalseExpr)
+          AssignStmt(
+           IdentifierExpr(nt)
+           IntegerLiteral(0))))))
+      IfStmt(
+       CallExpr(
+        ThisExpr
+        Compare
+        AbstractList(
+         IdentifierExpr(aux01)
+         IdentifierExpr(num))
+        3)
+       AssignStmt(
+        IdentifierExpr(bs01)
+        TrueExpr)
+       AssignStmt(
+        IdentifierExpr(bs01)
+        FalseExpr)))
+     IdentifierExpr(bs01)
+     FUNCTION(Search
+      OBJECT(BS)
+      RECORD(
+       FIELD(0 num
+        INT))
+      BOOLEAN))
+    MethodDecl(IntegerType Div
+     AbstractList(
+      Formal(IntegerType num))
+     AbstractList(
+      VarDecl(IntegerType count01 null 
+       INT)
+      VarDecl(IntegerType count02 null 
+       INT)
+      VarDecl(IntegerType aux03 null 
+       INT))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(count01)
+       IntegerLiteral(0))
+      AssignStmt(
+       IdentifierExpr(count02)
+       IntegerLiteral(0))
+      AssignStmt(
+       IdentifierExpr(aux03)
+       SubExpr(
+        IdentifierExpr(num)
+        IntegerLiteral(1)))
+      WhileStmt(
+       LesserExpr(
+        IdentifierExpr(count02)
+        IdentifierExpr(aux03))
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(count01)
+          AddExpr(
+           IdentifierExpr(count01)
+           IntegerLiteral(1)))
+         AssignStmt(
+          IdentifierExpr(count02)
+          AddExpr(
+           IdentifierExpr(count02)
+           IntegerLiteral(2)))))))
+     IdentifierExpr(count01)
+     FUNCTION(Div
+      OBJECT(BS)
+      RECORD(
+       FIELD(0 num
+        INT))
+      INT))
+    MethodDecl(BooleanType Compare
+     AbstractList(
+      Formal(IntegerType num1)
+      Formal(IntegerType num2))
+     AbstractList(
+      VarDecl(BooleanType retval null 
+       BOOLEAN)
+      VarDecl(IntegerType aux02 null 
+       INT))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(retval)
+       FalseExpr)
+      AssignStmt(
+       IdentifierExpr(aux02)
+       AddExpr(
+        IdentifierExpr(num2)
+        IntegerLiteral(1)))
+      IfStmt(
+       LesserExpr(
+        IdentifierExpr(num1)
+        IdentifierExpr(num2))
+       AssignStmt(
+        IdentifierExpr(retval)
+        FalseExpr)
+       IfStmt(
+        NotExpr(
+         LesserExpr(
+          IdentifierExpr(num1)
+          IdentifierExpr(aux02)))
+        AssignStmt(
+         IdentifierExpr(retval)
+         FalseExpr)
+        AssignStmt(
+         IdentifierExpr(retval)
+         TrueExpr))))
+     IdentifierExpr(retval)
+     FUNCTION(Compare
+      OBJECT(BS)
+      RECORD(
+       FIELD(0 num1
+        INT)
+       FIELD(1 num2
+        INT))
+      BOOLEAN))
+    MethodDecl(IntegerType Print
+     AbstractList()
+     AbstractList(
+      VarDecl(IntegerType j null 
+       INT))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(j)
+       IntegerLiteral(1))
+      WhileStmt(
+       LesserExpr(
+        IdentifierExpr(j)
+        IdentifierExpr(size))
+       BlockStmt(
+        AbstractList(
+         XinuCallStmt(printint
+          AbstractList(
+           ArrayExpr(
+            IdentifierExpr(number)
+            IdentifierExpr(j))))
+         AssignStmt(
+          IdentifierExpr(j)
+          AddExpr(
+           IdentifierExpr(j)
+           IntegerLiteral(1))))))
+      XinuCallStmt(printint
+       AbstractList(
+        IntegerLiteral(99999))))
+     IntegerLiteral(0)
+     FUNCTION(Print
+      OBJECT(BS)
+      RECORD()
+      INT))
+    MethodDecl(IntegerType Init
+     AbstractList(
+      Formal(IntegerType sz))
+     AbstractList(
+      VarDecl(IntegerType j null 
+       INT)
+      VarDecl(IntegerType k null 
+       INT)
+      VarDecl(IntegerType aux02 null 
+       INT)
+      VarDecl(IntegerType aux01 null 
+       INT))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(size)
+       IdentifierExpr(sz))
+      AssignStmt(
+       IdentifierExpr(number)
+       NewArrayExpr(IntegerType
+        AbstractList(
+         IdentifierExpr(sz))))
+      AssignStmt(
+       IdentifierExpr(j)
+       IntegerLiteral(1))
+      AssignStmt(
+       IdentifierExpr(k)
+       AddExpr(
+        IdentifierExpr(size)
+        IntegerLiteral(1)))
+      WhileStmt(
+       LesserExpr(
+        IdentifierExpr(j)
+        IdentifierExpr(size))
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(aux01)
+          MulExpr(
+           IntegerLiteral(2)
+           IdentifierExpr(j)))
+         AssignStmt(
+          IdentifierExpr(aux02)
+          SubExpr(
+           IdentifierExpr(k)
+           IntegerLiteral(3)))
+         AssignStmt(
+          ArrayExpr(
+           IdentifierExpr(number)
+           IdentifierExpr(j))
+          AddExpr(
+           IdentifierExpr(aux01)
+           IdentifierExpr(aux02)))
+         AssignStmt(
+          IdentifierExpr(j)
+          AddExpr(
+           IdentifierExpr(j)
+           IntegerLiteral(1)))
+         AssignStmt(
+          IdentifierExpr(k)
+          SubExpr(
+           IdentifierExpr(k)
+           IntegerLiteral(1)))))))
+     IntegerLiteral(0)
+     FUNCTION(Init
+      OBJECT(BS)
+      RECORD(
+       FIELD(0 sz
+        INT))
+      INT)))
+   CLASS(BS
+    null
+    RECORD(
+     FIELD(0 Start
+      FUNCTION(Start
+       OBJECT(BS)
+       RECORD(
+        FIELD(0 sz
+         INT))
+       INT))
+     FIELD(1 Search
+      FUNCTION(Search
+       OBJECT(BS)
+       RECORD(
+        FIELD(0 num
+         INT))
+       BOOLEAN))
+     FIELD(2 Div
+      FUNCTION(Div
+       OBJECT(BS)
+       RECORD(
+        FIELD(0 num
+         INT))
+       INT))
+     FIELD(3 Compare
+      FUNCTION(Compare
+       OBJECT(BS)
+       RECORD(
+        FIELD(0 num1
+         INT)
+        FIELD(1 num2
+         INT))
+       BOOLEAN))
+     FIELD(4 Print
+      FUNCTION(Print
+       OBJECT(BS)
+       RECORD()
+       INT))
+     FIELD(5 Init
+      FUNCTION(Init
+       OBJECT(BS)
+       RECORD(
+        FIELD(0 sz
+         INT))
+       INT)))
+    RECORD(
+     FIELD(0 number
+      ARRAY(
+       INT))
+     FIELD(1 size
+      INT))
+    OBJECT(BS
+     RECORD(
+      FIELD(0 Start
+       FUNCTION(Start
+        OBJECT(BS)
+        RECORD(
+         FIELD(0 sz
+          INT))
+        INT))
+      FIELD(1 Search
+       FUNCTION(Search
+        OBJECT(BS)
+        RECORD(
+         FIELD(0 num
+          INT))
+        BOOLEAN))
+      FIELD(2 Div
+       FUNCTION(Div
+        OBJECT(BS)
+        RECORD(
+         FIELD(0 num
+          INT))
+        INT))
+      FIELD(3 Compare
+       FUNCTION(Compare
+        OBJECT(BS)
+        RECORD(
+         FIELD(0 num1
+          INT)
+         FIELD(1 num2
+          INT))
+        BOOLEAN))
+      FIELD(4 Print
+       FUNCTION(Print
+        OBJECT(BS)
+        RECORD()
+        INT))
+      FIELD(5 Init
+       FUNCTION(Init
+        OBJECT(BS)
+        RECORD(
+         FIELD(0 sz
+          INT))
+        INT)))
+     RECORD(
+      FIELD(0 number
+       ARRAY(
+        INT))
+      FIELD(1 size
+       INT)))))))

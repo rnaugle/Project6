@@ -1,0 +1,67 @@
+DataFrag(
+	.data
+test_vtable:
+	.word test.main
+
+)
+DataFrag(
+	.data
+L0:	.asciiz	"b < c"
+)
+DataFrag(
+	.data
+L1:	.asciiz	"b >= c"
+)
+ProcFrag(
+MipsFrame(
+main:
+Formals(InReg(t32)
+	InReg(t33)
+	)
+Actuals(InReg(t4)
+	InReg(t5)
+	)
+BadPtr(_BADPTR)
+BadSub(_BADSUB)
+)
+SEQ(
+ SEQ(
+  SEQ(
+   MOVE(
+    TEMP(t34)
+    CONST(5))
+   MOVE(
+    TEMP(t35)
+    CONST(6)))
+  SEQ(
+   SEQ(
+    CJUMP(LT
+     TEMP(t34)
+     TEMP(t35)
+     L2 L3)
+    SEQ(
+     SEQ(
+      SEQ(
+       LABEL(L2)
+       EXP(
+        CALL(
+         NAME(_print)
+         NAME(L0)
+        )))
+      JUMP(
+       NAME(L4)))
+     SEQ(
+      SEQ(
+       LABEL(L3)
+       EXP(
+        CALL(
+         NAME(_print)
+         NAME(L1)
+        )))
+      JUMP(
+       NAME(L4)))))
+   LABEL(L4)))
+ MOVE(
+  TEMP(t2)
+  CONST(0)))
+)

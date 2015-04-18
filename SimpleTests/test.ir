@@ -1,0 +1,74 @@
+DataFrag(
+	.data
+test1_vtable:
+	.word test1.main
+
+)
+DataFrag(
+	.data
+yellow_vtable:
+	.word yellow.k
+
+)
+ProcFrag(
+MipsFrame(
+main:
+Formals(InReg(t32)
+	InReg(t33)
+	)
+Actuals(InReg(t4)
+	InReg(t5)
+	)
+BadPtr(_BADPTR)
+BadSub(_BADSUB)
+)
+SEQ(
+ SEQ(
+  MOVE(
+   TEMP(t34)
+   CALL(
+    NAME(_new)
+    CONST(0)
+    NAME(yellow_vtable)
+   ))
+  MOVE(
+   TEMP(t35)
+   ESEQ(
+    SEQ(
+     MOVE(
+      TEMP(t36)
+      TEMP(t34))
+     SEQ(
+      CJUMP(EQ
+       TEMP(t36)
+       CONST(0)
+       _BADPTR L0)
+      LABEL(L0)))
+    CALL(
+     MEM(
+      BINOP(PLUS
+       MEM(
+        BINOP(PLUS
+         TEMP(t36)
+         CONST(-4)))
+       CONST(0)))
+     TEMP(t36)
+    ))))
+ MOVE(
+  TEMP(t2)
+  CONST(0)))
+)
+ProcFrag(
+MipsFrame(
+yellow.k:
+Formals(InReg(t37)
+	)
+Actuals(InReg(t4)
+	)
+BadPtr(_BADPTR)
+BadSub(_BADSUB)
+)
+MOVE(
+ TEMP(t2)
+ CONST(6))
+)

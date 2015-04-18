@@ -1,0 +1,11 @@
+//test void method returns
+
+class test {
+	public static void main (String[] args){
+	}
+}
+	class cat {
+		int r;
+		public void eat()
+		{ }
+}

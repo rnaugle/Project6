@@ -1,0 +1,11 @@
+//test incorrect referencing error
+
+class test {
+	
+	public static void main (String[] args){
+		boolean g = 4;
+		int h = 1;
+		h = g;
+	}
+}
+

@@ -1,0 +1,20 @@
+//test method overide
+
+class test {
+	public static void main (String[] args){
+		int d = 3;
+	}
+}
+
+class cat{
+	public int eat(int m, boolean j){
+		return m;
+	}
+	
+}
+
+class kitten extends cat{
+	public boolean eat(String f)
+	{ return false; }
+}
+

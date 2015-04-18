@@ -1,0 +1,9 @@
+//test vardecl with incorrect assignment
+
+class test {
+	public static void main (String[] args){
+		int d;
+		String m = d;
+	}
+}
+

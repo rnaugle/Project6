@@ -1,0 +1,66 @@
+Program(
+ AbstractList(
+  ClassDecl(Main null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) args))
+     AbstractList(
+      VarDecl(BooleanType b
+       FalseExpr 
+       BOOLEAN)
+      VarDecl(BooleanType c
+       TrueExpr 
+       BOOLEAN)
+      VarDecl(IntegerType k
+       IntegerLiteral(8) 
+       INT)
+      VarDecl(IntegerType j
+       IntegerLiteral(4) 
+       INT))
+     AbstractList(
+      XinuCallStmt(printint
+       AbstractList(
+        IdentifierExpr(k)))
+      IfStmt(
+       LesserExpr(
+        IdentifierExpr(j)
+        IdentifierExpr(k))
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(k)
+          IntegerLiteral(5))))
+       null))
+     IntegerLiteral(0)
+     FUNCTION(main
+      OBJECT(Main)
+      RECORD(
+       FIELD(0 args
+        ARRAY(
+         OBJECT(String))))
+      VOID)))
+   CLASS(Main
+    null
+    RECORD(
+     FIELD(0 main
+      FUNCTION(main
+       OBJECT(Main)
+       RECORD(
+        FIELD(0 args
+         ARRAY(
+          OBJECT(String))))
+       VOID)))
+    RECORD()
+    OBJECT(Main
+     RECORD(
+      FIELD(0 main
+       FUNCTION(main
+        OBJECT(Main)
+        RECORD(
+         FIELD(0 args
+          ARRAY(
+           OBJECT(String))))
+        VOID)))
+     RECORD())))))

@@ -1,0 +1,4 @@
+Semant.ParseException: Encountered " <ID> "class "" at line 1, column 1.
+Was expecting:
+    "Program" ...
+    

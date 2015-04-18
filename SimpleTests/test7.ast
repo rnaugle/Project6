@@ -1,0 +1,20 @@
+Program(
+ AbstractList(
+  ClassDecl(test1 null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) args))
+     AbstractList(
+      VarDecl(ArrayType(IntegerType) k
+      NewArrayExpr(IntegerType
+       AbstractList(
+        IntegerLiteral(16)))))
+     AbstractList(
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(k)
+        IntegerLiteral(2))
+       IntegerLiteral(71)))
+     IntegerLiteral(0))))))

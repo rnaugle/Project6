@@ -1,0 +1,228 @@
+DataFrag(
+	.data
+test1_vtable:
+	.word test1.main
+
+)
+DataFrag(
+	.data
+yellow_vtable:
+	.word yellow.one
+	.word yellow.two
+
+)
+ProcFrag(
+MipsFrame(
+main:
+Formals(InReg(t32)
+	InReg(t33)
+	)
+Actuals(InReg(t4)
+	InReg(t5)
+	)
+BadPtr(_BADPTR)
+BadSub(_BADSUB)
+)
+SEQ(
+ SEQ(
+  SEQ(
+   SEQ(
+    SEQ(
+     SEQ(
+      MOVE(
+       TEMP(t34)
+       CALL(
+        NAME(_new)
+        CONST(3)
+        NAME(yellow_vtable)
+       ))
+      MOVE(
+       TEMP(t35)
+       ESEQ(
+        SEQ(
+         MOVE(
+          TEMP(t36)
+          TEMP(t34))
+         SEQ(
+          CJUMP(EQ
+           TEMP(t36)
+           CONST(0)
+           _BADPTR L0)
+          LABEL(L0)))
+        CALL(
+         MEM(
+          BINOP(PLUS
+           MEM(
+            BINOP(PLUS
+             TEMP(t36)
+             CONST(-4)))
+           CONST(0)))
+         TEMP(t36)
+         CONST(7)
+        ))))
+     MOVE(
+      TEMP(t37)
+      ESEQ(
+       SEQ(
+        MOVE(
+         TEMP(t38)
+         TEMP(t34))
+        SEQ(
+         CJUMP(EQ
+          TEMP(t38)
+          CONST(0)
+          _BADPTR L1)
+         LABEL(L1)))
+       CALL(
+        MEM(
+         BINOP(PLUS
+          MEM(
+           BINOP(PLUS
+            TEMP(t38)
+            CONST(-4)))
+          CONST(4)))
+        TEMP(t38)
+       ))))
+    MOVE(
+     TEMP(t39)
+     ESEQ(
+      SEQ(
+       MOVE(
+        TEMP(t40)
+        TEMP(t34))
+       CJUMP(EQ
+        TEMP(t40)
+        CONST(0)
+        _BADPTR L2))
+      ESEQ(
+       LABEL(L2)
+       MEM(
+        BINOP(PLUS
+         TEMP(t40)
+         CONST(0)))))))
+   MOVE(
+    TEMP(t41)
+    BINOP(PLUS
+     ESEQ(
+      SEQ(
+       MOVE(
+        TEMP(t42)
+        TEMP(t34))
+       CJUMP(EQ
+        TEMP(t42)
+        CONST(0)
+        _BADPTR L3))
+      ESEQ(
+       LABEL(L3)
+       MEM(
+        BINOP(PLUS
+         TEMP(t42)
+         CONST(4)))))
+     TEMP(t39))))
+  MOVE(
+   TEMP(t43)
+   BINOP(PLUS
+    ESEQ(
+     SEQ(
+      MOVE(
+       TEMP(t44)
+       TEMP(t34))
+      CJUMP(EQ
+       TEMP(t44)
+       CONST(0)
+       _BADPTR L4))
+     ESEQ(
+      LABEL(L4)
+      MEM(
+       BINOP(PLUS
+        TEMP(t44)
+        CONST(8)))))
+    ESEQ(
+     SEQ(
+      MOVE(
+       TEMP(t45)
+       TEMP(t34))
+      CJUMP(EQ
+       TEMP(t45)
+       CONST(0)
+       _BADPTR L5))
+     ESEQ(
+      LABEL(L5)
+      MEM(
+       BINOP(PLUS
+        TEMP(t45)
+        CONST(4))))))))
+ MOVE(
+  TEMP(t2)
+  CONST(0)))
+)
+ProcFrag(
+MipsFrame(
+yellow.one:
+Formals(InReg(t46)
+	InReg(t47)
+	)
+Actuals(InReg(t4)
+	InReg(t5)
+	)
+BadPtr(_BADPTR)
+BadSub(_BADSUB)
+)
+SEQ(
+ MOVE(
+  ESEQ(
+   SEQ(
+    MOVE(
+     TEMP(t48)
+     TEMP(t46))
+    CJUMP(EQ
+     TEMP(t48)
+     CONST(0)
+     _BADPTR L6))
+   ESEQ(
+    LABEL(L6)
+    MEM(
+     BINOP(PLUS
+      TEMP(t48)
+      CONST(4)))))
+  ESEQ(
+   SEQ(
+    MOVE(
+     TEMP(t49)
+     TEMP(t46))
+    SEQ(
+     CJUMP(EQ
+      TEMP(t49)
+      CONST(0)
+      _BADPTR L7)
+     LABEL(L7)))
+   CALL(
+    MEM(
+     BINOP(PLUS
+      MEM(
+       BINOP(PLUS
+        TEMP(t49)
+        CONST(-4)))
+      CONST(4)))
+    TEMP(t49)
+   )))
+ MOVE(
+  TEMP(t2)
+  BINOP(PLUS
+   TEMP(t47)
+   CONST(1))))
+)
+ProcFrag(
+MipsFrame(
+yellow.two:
+Formals(InReg(t50)
+	)
+Actuals(InReg(t4)
+	)
+BadPtr(_BADPTR)
+BadSub(_BADSUB)
+)
+MOVE(
+ TEMP(t2)
+ CONST(7))
+)

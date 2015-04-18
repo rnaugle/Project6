@@ -1,0 +1,77 @@
+package Semant.Visit;
+
+public class TypesPrintVisitor implements Visitor
+{
+	 private java.io.PrintStream out;
+  private int indent = 0;
+
+  public AbsynPrintVisitor()
+  {  this(System.out);  }
+
+  public AbsynPrintVisitor(java.io.PrintStream out)
+  {  this.out = out;  }
+
+  private void printIndent()
+  {  for (int i = 0; i < indent; i++)  out.print(" ");  }
+	
+	public void visit (Semant.Types.ARRAY e)
+	{		
+		out.println("ARRAY(");
+		indent += 2; printIndent();
+		e.element.accept(this);
+		out.println(")");
+		
+		indent -= 2;	printIndent();
+	}
+	
+	public void visit (Semant.Types.BOOLEAN e)
+	{
+		out.print("BOOLEAN");
+	}
+	
+	public void visit (Semant.Types.CLASS e)
+	{
+		out.println("CLASS(" + e.name);
+		indent += 2; printIndent();
+
+		if (e.parent == null)
+			out.println("null");
+		else
+			e.parent.accept(this);
+
+		//record of methods
+		printIndent();
+		out.print("RECORD(");
+		if (e.methods != null){
+			indent += 2; printIndent();
+			e.methods.accept(this);
+			out.println(")");
+			indent -= 2; printIndent();
+		}
+		else
+			out.println(")");
+
+		//record of vardecls
+		printIndent();
+		out.print("RECORD(");
+		if (e.fields != null){
+			indent += 2; printIndent();
+			e.fields.accept(this);
+			out.println(")");
+			indent -= 2; printIndent();
+		}
+		else
+			out.println(")");	
+		
+		out.print(")");
+
+		//the object associated with the class
+		indent -= 2; printIndent();
+		e.instance.accept(this);
+	}
+
+	public void visit (Semant.Types.FIELD e)
+	{
+
+	}
+}

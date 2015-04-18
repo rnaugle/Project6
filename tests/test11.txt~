@@ -1,0 +1,11 @@
+//test incorrect ifstmt
+
+class test {
+	
+	public static void main (String[] args){
+		boolean n = true;
+		int m = 6;
+		if(true)
+			m = -9;
+	}
+}

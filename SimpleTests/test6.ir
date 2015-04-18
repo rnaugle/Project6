@@ -1,0 +1,133 @@
+DataFrag(
+	.data
+test1_vtable:
+	.word test1.main
+
+)
+DataFrag(
+	.data
+yellow_vtable:
+	.word yellow.one
+	.word yellow.two
+
+)
+ProcFrag(
+MipsFrame(
+main:
+Formals(InReg(t32)
+	InReg(t33)
+	)
+Actuals(InReg(t4)
+	InReg(t5)
+	)
+BadPtr(_BADPTR)
+BadSub(_BADSUB)
+)
+SEQ(
+ SEQ(
+  SEQ(
+   MOVE(
+    TEMP(t34)
+    CONST(0))
+   MOVE(
+    TEMP(t35)
+    CONST(0)))
+  SEQ(
+   SEQ(
+    SEQ(
+     LABEL(L1)
+     CJUMP(NE
+      TEMP(t34)
+      CONST(0)
+      L2 L0))
+    SEQ(
+     SEQ(
+      LABEL(L2)
+      MOVE(
+       TEMP(t35)
+       CONST(1)))
+     JUMP(
+      NAME(L1))))
+   LABEL(L0)))
+ MOVE(
+  TEMP(t2)
+  CONST(0)))
+)
+ProcFrag(
+MipsFrame(
+yellow.one:
+Formals(InReg(t36)
+	)
+Actuals(InReg(t4)
+	)
+BadPtr(_BADPTR)
+BadSub(_BADSUB)
+)
+SEQ(
+ MOVE(
+  ESEQ(
+   SEQ(
+    MOVE(
+     TEMP(t37)
+     TEMP(t36))
+    CJUMP(EQ
+     TEMP(t37)
+     CONST(0)
+     _BADPTR L3))
+   ESEQ(
+    LABEL(L3)
+    MEM(
+     BINOP(PLUS
+      TEMP(t37)
+      CONST(4)))))
+  ESEQ(
+   SEQ(
+    MOVE(
+     TEMP(t38)
+     TEMP(t36))
+    SEQ(
+     CJUMP(EQ
+      TEMP(t38)
+      CONST(0)
+      _BADPTR L4)
+     LABEL(L4)))
+   CALL(
+    MEM(
+     BINOP(PLUS
+      MEM(
+       BINOP(PLUS
+        TEMP(t38)
+        CONST(-4)))
+      CONST(4)))
+    TEMP(t38)
+   )))
+ MOVE(
+  TEMP(t2)
+  BINOP(PLUS
+   CONST(6)
+   CONST(1))))
+)
+DataFrag(
+	.data
+L5:	.asciiz	"Green"
+)
+ProcFrag(
+MipsFrame(
+yellow.two:
+Formals(InReg(t39)
+	)
+Actuals(InReg(t4)
+	)
+BadPtr(_BADPTR)
+BadSub(_BADSUB)
+)
+SEQ(
+ EXP(
+  CALL(
+   NAME(_print)
+   NAME(L5)
+  ))
+ MOVE(
+  TEMP(t2)
+  CONST(7)))
+)

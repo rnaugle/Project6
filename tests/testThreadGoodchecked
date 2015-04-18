@@ -1,0 +1,424 @@
+Program(
+ AbstractList(
+  ClassDecl(Main null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) args))
+     AbstractList(
+      VarDecl(IntegerType f null 
+       INT)
+      VarDecl(IdentifierType(Thread1) myThread1
+       NewObjectExpr(IdentifierType(Thread1)) 
+       OBJECT(Thread1))
+      VarDecl(IdentifierType(Thread2) myThread2
+       NewObjectExpr(IdentifierType(Thread2)) 
+       OBJECT(Thread2))
+      VarDecl(IdentifierType(Data) ddd
+       NewObjectExpr(IdentifierType(Data)) 
+       OBJECT(Data))
+      VarDecl(IdentifierType(Data) tempD null 
+       OBJECT(Data)))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(f)
+       CallExpr(
+        IdentifierExpr(ddd)
+        set_field
+        AbstractList(
+         IntegerLiteral(0))
+        0))
+      AssignStmt(
+       IdentifierExpr(tempD)
+       CallExpr(
+        IdentifierExpr(myThread1)
+        setData
+        AbstractList(
+         IdentifierExpr(ddd))
+        1))
+      AssignStmt(
+       IdentifierExpr(tempD)
+       CallExpr(
+        IdentifierExpr(myThread2)
+        setData
+        AbstractList(
+         IdentifierExpr(ddd))
+        1))
+      XinuCallStmt(threadCreate
+       AbstractList(
+        IdentifierExpr(myThread2)))
+      XinuCallStmt(threadCreate
+       AbstractList(
+        IdentifierExpr(myThread1))))
+     IntegerLiteral(0)
+     FUNCTION(main
+      OBJECT(Main)
+      RECORD(
+       FIELD(0 args
+        ARRAY(
+         OBJECT(String))))
+      VOID)))
+   CLASS(Main
+    null
+    RECORD(
+     FIELD(0 main
+      FUNCTION(main
+       OBJECT(Main)
+       RECORD(
+        FIELD(0 args
+         ARRAY(
+          OBJECT(String))))
+       VOID)))
+    RECORD()
+    OBJECT(Main
+     RECORD(
+      FIELD(0 main
+       FUNCTION(main
+        OBJECT(Main)
+        RECORD(
+         FIELD(0 args
+          ARRAY(
+           OBJECT(String))))
+        VOID)))
+     RECORD())))
+  ThreadDecl(Thread1 Thread
+   AbstractList(
+    VarDecl(IdentifierType(Data) d null 
+     OBJECT(Data))
+    VarDecl(IntegerType x null 
+     INT))
+   AbstractList(
+    VoidDecl(run
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(x)
+       CallExpr(
+        IdentifierExpr(d)
+        increment_one
+        AbstractList()
+        1))
+      AssignStmt(
+       IdentifierExpr(x)
+       CallExpr(
+        IdentifierExpr(d)
+        field_print
+        AbstractList()
+        4)))
+     FUNCTION(run
+      OBJECT(Thread1)
+      RECORD()
+      VOID))
+    MethodDecl(IdentifierType(Data) setData
+     AbstractList(
+      Formal(IdentifierType(Data) dd))
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(d)
+       IdentifierExpr(dd)))
+     IdentifierExpr(d)
+     FUNCTION(setData
+      OBJECT(Thread1)
+      RECORD(
+       FIELD(0 dd
+        OBJECT(Data)))
+      OBJECT(Data))))
+   CLASS(Thread1
+    Thread
+    RECORD(
+     FIELD(0 run
+      FUNCTION(run
+       OBJECT(Thread1)
+       RECORD()
+       VOID))
+     FIELD(1 setData
+      FUNCTION(setData
+       OBJECT(Thread1)
+       RECORD(
+        FIELD(0 dd
+         OBJECT(Data)))
+       OBJECT(Data))))
+    RECORD(
+     FIELD(0 d
+      OBJECT(Data))
+     FIELD(1 x
+      INT))
+    OBJECT(Thread1
+     RECORD(
+      FIELD(0 run
+       FUNCTION(run
+        OBJECT(Thread1)
+        RECORD()
+        VOID))
+      FIELD(1 setData
+       FUNCTION(setData
+        OBJECT(Thread1)
+        RECORD(
+         FIELD(0 dd
+          OBJECT(Data)))
+        OBJECT(Data))))
+     RECORD(
+      FIELD(0 d
+       OBJECT(Data))
+      FIELD(1 x
+       INT)))))
+  ThreadDecl(Thread2 Thread
+   AbstractList(
+    VarDecl(IdentifierType(Data) d null 
+     OBJECT(Data))
+    VarDecl(IntegerType x null 
+     INT))
+   AbstractList(
+    VoidDecl(run
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(x)
+       CallExpr(
+        IdentifierExpr(d)
+        increment_ten
+        AbstractList()
+        2))
+      AssignStmt(
+       IdentifierExpr(x)
+       CallExpr(
+        IdentifierExpr(d)
+        field_print
+        AbstractList()
+        4)))
+     FUNCTION(run
+      OBJECT(Thread2)
+      RECORD()
+      VOID))
+    MethodDecl(IdentifierType(Data) setData
+     AbstractList(
+      Formal(IdentifierType(Data) dd))
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(d)
+       IdentifierExpr(dd)))
+     IdentifierExpr(d)
+     FUNCTION(setData
+      OBJECT(Thread2)
+      RECORD(
+       FIELD(0 dd
+        OBJECT(Data)))
+      OBJECT(Data))))
+   CLASS(Thread2
+    Thread
+    RECORD(
+     FIELD(0 run
+      FUNCTION(run
+       OBJECT(Thread2)
+       RECORD()
+       VOID))
+     FIELD(1 setData
+      FUNCTION(setData
+       OBJECT(Thread2)
+       RECORD(
+        FIELD(0 dd
+         OBJECT(Data)))
+       OBJECT(Data))))
+    RECORD(
+     FIELD(0 d
+      OBJECT(Data))
+     FIELD(1 x
+      INT))
+    OBJECT(Thread2
+     RECORD(
+      FIELD(0 run
+       FUNCTION(run
+        OBJECT(Thread2)
+        RECORD()
+        VOID))
+      FIELD(1 setData
+       FUNCTION(setData
+        OBJECT(Thread2)
+        RECORD(
+         FIELD(0 dd
+          OBJECT(Data)))
+        OBJECT(Data))))
+     RECORD(
+      FIELD(0 d
+       OBJECT(Data))
+      FIELD(1 x
+       INT)))))
+  ClassDecl(Data null
+   AbstractList(
+    VarDecl(IntegerType field null 
+     INT))
+   AbstractList(
+    MethodDecl(IntegerType set_field
+     AbstractList(
+      Formal(IntegerType x))
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(field)
+       IdentifierExpr(x)))
+     IdentifierExpr(field)
+     FUNCTION(set_field
+      OBJECT(Data)
+      RECORD(
+       FIELD(0 x
+        INT))
+      INT))
+    MethodDecl(IntegerType synchronized increment_one
+     AbstractList()
+     AbstractList(
+      VarDecl(IntegerType temp
+       IdentifierExpr(field) 
+       INT))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(temp)
+       AddExpr(
+        IdentifierExpr(temp)
+        IntegerLiteral(1)))
+      AssignStmt(
+       IdentifierExpr(temp)
+       CallExpr(
+        ThisExpr
+        write
+        AbstractList(
+         IdentifierExpr(temp))
+        3)))
+     IdentifierExpr(field)
+     FUNCTION(increment_one
+      OBJECT(Data)
+      RECORD()
+      INT))
+    MethodDecl(IntegerType synchronized increment_ten
+     AbstractList()
+     AbstractList(
+      VarDecl(IntegerType temp
+       IdentifierExpr(field) 
+       INT))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(temp)
+       AddExpr(
+        IdentifierExpr(temp)
+        IntegerLiteral(10)))
+      AssignStmt(
+       IdentifierExpr(temp)
+       CallExpr(
+        ThisExpr
+        write
+        AbstractList(
+         IdentifierExpr(temp))
+        3)))
+     IdentifierExpr(field)
+     FUNCTION(increment_ten
+      OBJECT(Data)
+      RECORD()
+      INT))
+    MethodDecl(IntegerType synchronized write
+     AbstractList(
+      Formal(IntegerType x))
+     AbstractList()
+     AbstractList(
+      XinuCallStmt(yield
+       AbstractList())
+      AssignStmt(
+       IdentifierExpr(field)
+       IdentifierExpr(x)))
+     IdentifierExpr(field)
+     FUNCTION(write
+      OBJECT(Data)
+      RECORD(
+       FIELD(0 x
+        INT))
+      INT))
+    MethodDecl(IntegerType synchronized field_print
+     AbstractList()
+     AbstractList(
+      VarDecl(IntegerType temp
+       IdentifierExpr(field) 
+       INT))
+     AbstractList(
+      XinuCallStmt(yield
+       AbstractList())
+      XinuCallStmt(print
+       AbstractList(
+        StringLiteral("field = ")))
+      XinuCallStmt(printint
+       AbstractList(
+        IdentifierExpr(temp))))
+     IdentifierExpr(field)
+     FUNCTION(field_print
+      OBJECT(Data)
+      RECORD()
+      INT)))
+   CLASS(Data
+    null
+    RECORD(
+     FIELD(0 set_field
+      FUNCTION(set_field
+       OBJECT(Data)
+       RECORD(
+        FIELD(0 x
+         INT))
+       INT))
+     FIELD(1 increment_one
+      FUNCTION(increment_one
+       OBJECT(Data)
+       RECORD()
+       INT))
+     FIELD(2 increment_ten
+      FUNCTION(increment_ten
+       OBJECT(Data)
+       RECORD()
+       INT))
+     FIELD(3 write
+      FUNCTION(write
+       OBJECT(Data)
+       RECORD(
+        FIELD(0 x
+         INT))
+       INT))
+     FIELD(4 field_print
+      FUNCTION(field_print
+       OBJECT(Data)
+       RECORD()
+       INT)))
+    RECORD(
+     FIELD(0 field
+      INT))
+    OBJECT(Data
+     RECORD(
+      FIELD(0 set_field
+       FUNCTION(set_field
+        OBJECT(Data)
+        RECORD(
+         FIELD(0 x
+          INT))
+        INT))
+      FIELD(1 increment_one
+       FUNCTION(increment_one
+        OBJECT(Data)
+        RECORD()
+        INT))
+      FIELD(2 increment_ten
+       FUNCTION(increment_ten
+        OBJECT(Data)
+        RECORD()
+        INT))
+      FIELD(3 write
+       FUNCTION(write
+        OBJECT(Data)
+        RECORD(
+         FIELD(0 x
+          INT))
+        INT))
+      FIELD(4 field_print
+       FUNCTION(field_print
+        OBJECT(Data)
+        RECORD()
+        INT)))
+     RECORD(
+      FIELD(0 field
+       INT)))))))

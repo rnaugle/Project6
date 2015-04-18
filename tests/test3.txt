@@ -1,0 +1,8 @@
+//test vardecl return
+
+class test {
+	public static void main (String[] args){
+		int d = 3;
+	}
+}
+
