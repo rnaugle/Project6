@@ -2,18 +2,18 @@ package Tree;
 import java.util.LinkedList;
 public class BINOP extends Exp{
 
-	public static int PLUS = 0;
-	public static int MINUS = 1;
-	public static int MUL = 2;
-	public static int DIV = 3;
-	public static int AND = 4;
-	public static int OR = 5;
-	public static int LSHIFT = 6;
-	public static int RSHIFT = 7;
-	public static int ARSHIFT = 8;
-	public static int BITAND = 9;
-	public static int BITOR = 10;
-	public static int BITXOR = 11;
+	public static final int PLUS = 0;
+	public static final int MINUS = 1;
+	public static final int MUL = 2;
+	public static final int DIV = 3;
+	public static final int AND = 4;
+	public static final int OR = 5;
+	public static final int LSHIFT = 6;
+	public static final int RSHIFT = 7;
+	public static final int ARSHIFT = 8;
+	public static final int BITAND = 9;
+	public static final int BITOR = 10;
+	public static final int BITXOR = 11;
 	
 	public int binop;
 	public Exp left;

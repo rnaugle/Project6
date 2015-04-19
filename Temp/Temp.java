@@ -9,6 +9,10 @@ public class Temp {
 		count++;
 	}
 	
+	public Temp(int c){
+		num = c;
+	}
+	
 	public String toString(){
 		return new String("t" + num);
 	}

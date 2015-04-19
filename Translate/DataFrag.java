@@ -29,19 +29,19 @@ public class DataFrag extends Frag{
 	public String toString(){
 		String s;
 		s = "\t.data\n";
-		if(label == null){
-			
-			s+=data+"_vtable:\n";
-			//for(Types.FUNCTION f : flist){
-				//Types.OBJECT o = (Types.OBJECT)f.self;
-				//Types.CLASS c = o.myClass;
-				//s+="\t.word "+c.name+"."+f.name;
-				//s+="\n";
-			//}
-		}else{
+//		if(label == null){
+//			
+//			s+=data+"_vtable:\n";
+//			//for(Types.FUNCTION f : flist){
+//				// .OBJECT o = (Types.OBJECT)f.self;
+//				//Types.CLASS c = o.myClass;
+//				//s+="\t.word "+c.name+"."+f.name;
+//				//s+="\n";
+//			//}
+//		}else{
 
 			s+= label+":\t.asciiz\t"+ data;
-		}
+//		}
 		return s;
 	}
 	

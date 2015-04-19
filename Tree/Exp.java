@@ -13,6 +13,12 @@ public abstract class Exp implements Hospitable{
 		return null;
 	}
 	
+	public Temp.Temp accept(CodeVisitor v) {
+		// TODO Auto-generated method stub
+		return v.visit(this);
+		
+	}
+	
 	
 	
 	

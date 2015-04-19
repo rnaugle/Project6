@@ -1,7 +1,7 @@
 package Tree;
 import java.util.LinkedList;
 public class MEM extends Exp{
-	Exp exp;
+	public Exp exp;
 	public MEM(Exp e){
 		exp = e;
 	}
