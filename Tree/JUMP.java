@@ -13,7 +13,10 @@ public class JUMP extends Stm{
 	public JUMP(Temp.Label target){
 //		targets = new java.util.LinkedList<Temp.Label>();
 //		targets.add(target);
-		this(new NAME(target), new java.util.LinkedList<Temp.Label>());
+		java.util.LinkedList<Temp.Label> list = new java.util.LinkedList<Temp.Label>();
+		list.add(target);
+		exp = new NAME(target);
+		targets = list;
 	}
 
 	

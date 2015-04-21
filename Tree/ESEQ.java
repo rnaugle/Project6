@@ -20,11 +20,11 @@ public class ESEQ extends Exp{
 		
 	}
 	public LinkedList<Exp> kids() {
-		return null;
+		throw new Error("kids() not applicable to ESEQ");
 	}
 
 	public Exp build(LinkedList<Exp> exps) {
-		return null;
+		throw new Error("build() not applicable to ESEQ");
 	}
 
 }

@@ -49,7 +49,7 @@ public class CJUMP extends Stm{
 	}
 
 	public Stm build(LinkedList<Exp> exps) {
-		return null;
+		return new LinkedList<Exp>();
 	}
 
 }

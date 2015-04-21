@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 public class Codegen implements CodeVisitor{
 	
-	Mips.MipsFrame frame;
+	MipsFrame frame;
 	Temp caller[] = {
 			new Temp(31),
 			new Temp(4),
@@ -36,9 +36,9 @@ public class Codegen implements CodeVisitor{
 		frame = (MipsFrame)f;
 	}
 	
-	public Codegen(List<Stm> stms){
+	public Codegen(List<Stm> stms, MipsFrame f){
 		instructions = new ArrayList<Instr>();
-		//frame = (MipsFrame)f;
+		frame = f;
 		for(Stm s : stms){
 			s.accept(this);
 		}
@@ -49,53 +49,69 @@ public class Codegen implements CodeVisitor{
 	public ArrayList<Instr> instructions;
 	
 	public Temp visit(BINOP n){
-		Temp t  = new Temp();
+		Temp t = new Temp();
 		int k = n.binop;
 		int j;
 		OPER o = null;
 		switch(k){
 			case BINOP.PLUS:
-				if(n.left instanceof CONST ^ n.right instanceof CONST){
+				if(n.left instanceof CONST || n.right instanceof CONST){
 					
 					if(n.left instanceof CONST){
 						j = ((CONST)n.left).value;
-						o = new OPER("addi\t'd0,\t's0,\t"+j, new Temp[]{t}, new Temp[]{n.right.accept(this)}, null);
+						if(j == 0){
+							//t.count--;
+						
+							return n.right.accept(this);
+						}else{
+							o = new OPER("\taddi\t`d0,\t`s0,\t"+j, new Temp[]{t}, new Temp[]{n.right.accept(this)}, null);
+						}
+						
+						
 					}else{
 						j = ((CONST)n.right).value;
-						o = new OPER("addi\t'd0,\t's0,\t"+j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
+						if(j == 0){
+							//t.count--;
+							return n.left.accept(this);
+						}else{
+						
+							o = new OPER("\taddi\t`d0,\t`s0,\t"+j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
+						}
 					}
 					
 				}else{
-					o = new OPER("add\t'd0,\t's0,\t's1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
+					o = new OPER("\tadd\t`d0,\t`s0,\t`s1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
 				}
 				break;
 			case BINOP.MINUS:
-				if(n.right instanceof CONST && !(n.left instanceof CONST)){
+				if(n.right instanceof CONST){
 					
-					j = ((CONST)n.left).value;
-					o = new OPER("addi\t'd0,\t's0,\t"+-j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
+					j = ((CONST)n.right).value;
+					
+					o = new OPER("\taddi\t`d0,\t`s0,\t"+-j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
 					
 					
 				}else{
-					o = new OPER("sub\t'd0,\t's0,\t's1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
+					o = new OPER("\tsub\t`d0,\t`s0,\t`s1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
 				}
 				break;
 			case BINOP.MUL:
-				if(n.left instanceof CONST ^ n.right instanceof CONST){
+				if(n.left instanceof CONST || n.right instanceof CONST){
 					
-					if(n.left instanceof CONST  && (((j = ((CONST)n.right).value) > 0) && ((j & (j - 1)) == 0))){
-						j = Integer.bitCount(j-1);
-						o = new OPER("sll\t'd0,\t's0,\t"+j, new Temp[]{t}, new Temp[]{n.right.accept(this)}, null);
-					}else if(n.right instanceof CONST && (((j = ((CONST)n.right).value) > 0) && ((j & (j - 1)) == 0))){
-						j = Integer.bitCount(j);
+					if(n.left instanceof CONST  && (((j = ((CONST)n.left).value) > 0) && ((j & (j - 1)) == 0))){
 						
-						o = new OPER("sll\t'd0,\t's0,\t"+j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
+						j = Integer.bitCount(j-1);
+						o = new OPER("\tsll\t`d0,\t`s0,\t"+j, new Temp[]{t}, new Temp[]{n.right.accept(this)}, null);
+					}else if(n.right instanceof CONST && (((j = ((CONST)n.right).value) > 0) && ((j & (j - 1)) == 0))){
+						j = Integer.bitCount(j-1);
+						
+						o = new OPER("\tsll\t`d0,\t`s0,\t"+j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
 					}else{
-						o = new OPER("mulo\t'd0,\t's0,\t's1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
+						o = new OPER("\tmulo\t`d0,\t`s0,\t`s1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
 					}
 					
 				}else{
-					o = new OPER("mulo\t'd0,\t's0,\t's1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
+					o = new OPER("\tmulo\t`d0,\t`s0,\t`s1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
 				}
 				break;
 				
@@ -104,43 +120,43 @@ public class Codegen implements CodeVisitor{
 				
 				if(n.right instanceof CONST  && (((j = ((CONST)n.right).value) > 0) && ((j & (j - 1)) == 0))){
 					j = Integer.bitCount(j-1);
-					o = new OPER("sra\t'd0,\t's0,\t"+j, new Temp[]{t}, new Temp[]{n.right.accept(this)}, null);
+					o = new OPER("\tsra\t`d0,\t`s0,\t"+j, new Temp[]{t}, new Temp[]{n.right.accept(this)}, null);
 				
 				}else{
-					o = new OPER("div\t'd0,\t's0,\t's1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
+					o = new OPER("\tdiv\t`d0,\t`s0,\t`s1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
 				}
 					
 				
 				break;
 			case BINOP.AND:
-				if(n.left instanceof CONST ^ n.right instanceof CONST){
+				if(n.left instanceof CONST || n.right instanceof CONST){
 					
 					if(n.left instanceof CONST){
 						j = ((CONST)n.left).value;
-						o = new OPER("andi\t'd0,\t's0,\t"+j, new Temp[]{t}, new Temp[]{n.right.accept(this)}, null);
+						o = new OPER("\tandi\t`d0,\t`s0,\t"+j, new Temp[]{t}, new Temp[]{n.right.accept(this)}, null);
 					}else{
 						j = ((CONST)n.right).value;
-						o = new OPER("andi\t'd0,\t's0,\t"+j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
+						o = new OPER("\tandi\t`d0,\t`s0,\t"+j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
 					}
 					
 				}else{
-					o = new OPER("and\t'd0,\t's0,\t's1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
+					o = new OPER("\tand\t`d0,\t`s0,\t`s1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
 				}
 				break;
 				
 			case BINOP.OR:
-				if(n.left instanceof CONST ^ n.right instanceof CONST){
+				if(n.left instanceof CONST || n.right instanceof CONST){
 					
 					if(n.left instanceof CONST){
 						j = ((CONST)n.left).value;
-						o = new OPER("ori\t'd0,\t's0,\t"+j, new Temp[]{t}, new Temp[]{n.right.accept(this)}, null);
+						o = new OPER("\tori\t`d0,\t`s0,\t"+j, new Temp[]{t}, new Temp[]{n.right.accept(this)}, null);
 					}else{
 						j = ((CONST)n.right).value;
-						o = new OPER("ori\t'd0,\t's0,\t"+j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
+						o = new OPER("\tori\t`d0,\t`s0,\t"+j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
 					}
 					
 				}else{
-					o = new OPER("or\t'd0,\t's0,\t's1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
+					o = new OPER("\tor\t`d0,\t`s0,\t`s1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
 				}
 				break;
 				
@@ -148,22 +164,22 @@ public class Codegen implements CodeVisitor{
 				if(n.right instanceof CONST && !(n.left instanceof CONST)){
 					
 					j = ((CONST)n.left).value;
-					o = new OPER("sll\t'd0,\t's0,\t"+-j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
+					o = new OPER("\tsll\t`d0,\t`s0,\t"+-j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
 					
 					
 				}else{
-					o = new OPER("sllv\t'd0,\t's0,\t's1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
+					o = new OPER("\tsllv\t`d0,\t`s0,\t`s1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
 				}
 				break;
 			case BINOP.RSHIFT:
 				if(n.right instanceof CONST && !(n.left instanceof CONST)){
 					
 					j = ((CONST)n.left).value;
-					o = new OPER("srl\t'd0,\t's0,\t"+-j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
+					o = new OPER("\tsrl\t`d0,\t`s0,\t"+-j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
 					
 					
 				}else{
-					o = new OPER("srlv\t'd0,\t's0,\t's1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
+					o = new OPER("srlv\t`d0,\t`s0,\t`s1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
 				}
 				break;
 				
@@ -171,27 +187,27 @@ public class Codegen implements CodeVisitor{
 				if(n.right instanceof CONST && !(n.left instanceof CONST)){
 					
 					j = ((CONST)n.left).value;
-					o = new OPER("sra\t'd0,\t's0,\t"+-j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
+					o = new OPER("\tsra\t`d0,\t`s0,\t"+-j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
 					
 					
 				}else{
-					o = new OPER("srav\t'd0,\t's0,\t's1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
+					o = new OPER("\tsrav\t`d0,\t`s0,\t`s1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
 				}
 				break;
 				
 			case BINOP.BITXOR:
-				if(n.left instanceof CONST ^ n.right instanceof CONST){
+				if(n.left instanceof CONST || n.right instanceof CONST){
 					
 					if(n.left instanceof CONST){
 						j = ((CONST)n.left).value;
-						o = new OPER("xori\t'd0,\t's0,\t"+j, new Temp[]{t}, new Temp[]{n.right.accept(this)}, null);
+						o = new OPER("\txori\t`d0,\t`s0,\t"+j, new Temp[]{t}, new Temp[]{n.right.accept(this)}, null);
 					}else{
 						j = ((CONST)n.right).value;
-						o = new OPER("xori\t'd0,\t's0,\t"+j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
+						o = new OPER("\txori\t`d0,\t`s0,\t"+j, new Temp[]{t}, new Temp[]{n.left.accept(this)}, null);
 					}
 					
 				}else{
-					o = new OPER("xor\t'd0,\t's0,\t's1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
+					o = new OPER("\txor\t`d0,\t`s0,\t`s1", new Temp[]{t}, new Temp[]{n.left.accept(this), n.right.accept(this)}, null);
 				}
 				break;
 			default:
@@ -205,26 +221,27 @@ public class Codegen implements CodeVisitor{
 	public Temp visit(CALL n){
 		//TODO not sure here
 		//Temp
-//		Assem.MOVE move = new Assem.MOVE("move\t'd0,\t's0", new Temp(4), t);
+//		Assem.MOVE move = new Assem.MOVE("move\t`d0,\t`s0", new Temp(4), t);
 //		instructions.add(move);
 //		offset += 4;
 		ArrayList<Temp> args = new ArrayList<Temp>();
 		int i = 0;
 		int offset = 0;
 		for(Exp e : n.args){
-			offset += 4;
+			
 			if(i < 4){				
 				Temp t = e.accept(this);
-				Assem.MOVE move = new Assem.MOVE("move\t'd0,\t's0", new Temp(4 + i), t);
+				Assem.MOVE move = new Assem.MOVE("\tmove\t`d0,\t`s0", new Temp(4 + i), t);
 				instructions.add(move);
 				args.add(new Temp(4 + i));
 			}else{
 				Temp t2 = e.accept(this);
-				OPER o2 = new OPER("sw\t's0,\t" + offset + "('s2)", null, new Temp[]{t2, new Temp(29)}, null);
+				OPER o2 = new OPER("\tsw\t`s0,\t" + offset + "(`s1)", null, new Temp[]{t2, new Temp(29)}, null);
 				instructions.add(o2);
 				//args.add(new Temp(4 + i));
 				//TODO see what happens with multiple args for contructor
 			}
+			offset += 4;
 			i++;
 		}
 		
@@ -234,14 +251,17 @@ public class Codegen implements CodeVisitor{
 		
 		if(n.func instanceof NAME){
 			NAME name = (NAME)n.func;
-			OPER o3 = new OPER("jal\t"+name.label.name, caller, args.toArray(new Temp[args.size()]), null);
+			OPER o3 = new OPER("\tjal\t"+name.label.name, caller, args.toArray(new Temp[args.size()]), null);
 			instructions.add(o3);
 		}else{
 			Temp t3 = n.func.accept(this);
 			args.add(0, t3);
-			OPER o4 = new OPER("jalr\t's0", caller, args.toArray(new Temp[args.size()]), null);
+			OPER o4 = new OPER("\tjalr\t`s0", caller, args.toArray(new Temp[args.size()]), null);
 			instructions.add(o4);
 		}
+		
+		OPER o5 = new OPER("\t// Call sink", null, caller, null);
+		instructions.add(o5);
 		
 		
 		return new Temp(2);
@@ -254,22 +274,22 @@ public class Codegen implements CodeVisitor{
 		OPER o = null;
 		switch(k){
 			case CJUMP.EQ:				
-				o = new OPER("beq\t's0,\t's1,\t,'j0\t", null, new Temp[]{n.left.accept(this), n.right.accept(this)}, list);
+				o = new OPER("\tbeq\t`s0,\t`s1,\t`j0", null, new Temp[]{n.left.accept(this), n.right.accept(this)}, list);
 				break;
 			case CJUMP.NE:
-				o = new OPER("bne\t's0,\t's1,\t,'j0\t", null, new Temp[]{n.left.accept(this), n.right.accept(this)}, list);
+				o = new OPER("\tbne\t`s0,\t`s1,\t`j0", null, new Temp[]{n.left.accept(this), n.right.accept(this)}, list);
 				break;
 			case CJUMP.LT:
-				o = new OPER("blt\t's0,\t's1,\t,'j0\t", null, new Temp[]{n.left.accept(this), n.right.accept(this)}, list);
+				o = new OPER("\tblt\t`s0,\t`s1,\t`j0", null, new Temp[]{n.left.accept(this), n.right.accept(this)}, list);
 				break;
 			case CJUMP.GT:
-				o = new OPER("bgt\t's0,\t's1,\t,'j0\t", null, new Temp[]{n.left.accept(this), n.right.accept(this)}, list);
+				o = new OPER("\tbgt\t`s0,\t`s1,\t`j0", null, new Temp[]{n.left.accept(this), n.right.accept(this)}, list);
 				break;
 			case CJUMP.LE:
-				o = new OPER("ble\t's0,\t's1,\t,'j0\t", null, new Temp[]{n.left.accept(this), n.right.accept(this)}, list);
+				o = new OPER("\tble\t`s0,\t`s1,\t`j0", null, new Temp[]{n.left.accept(this), n.right.accept(this)}, list);
 				break;
 			default:
-				o = new OPER("bge\t's0,\t's1,\t,'j0\t", null, new Temp[]{n.left.accept(this), n.right.accept(this)}, list);
+				o = new OPER("\tbge\t`s0,\t`s1,\t`j0", null, new Temp[]{n.left.accept(this), n.right.accept(this)}, list);
 				break;
 		}
 		instructions.add(o);
@@ -277,9 +297,18 @@ public class Codegen implements CodeVisitor{
 	public Temp visit(CONST n){
 		if(n.value == 0){
 			return new Temp(0);
+		
+		}else if(n.value >= 65536/2){
+			Temp t = new Temp();
+			OPER o = new OPER("\tli\t`d0,\t"+n.value,new Temp[]{t}, null, null);
+			instructions.add(o);
+			return t;
 		}else{
 			Temp t = new Temp();
-			OPER o = new OPER("addi\t'd0,\t's0,\t"+n.value,new Temp[]{t}, new Temp[]{new Temp(0)}, null);
+//			if(t.num == 126){
+//				System.out.println("HERE Const");
+//			}
+			OPER o = new OPER("\taddi\t`d0,\t`s0,\t"+n.value,new Temp[]{t}, new Temp[]{new Temp(0)}, null);
 			instructions.add(o);
 			return t;
 		}
@@ -309,10 +338,10 @@ public class Codegen implements CodeVisitor{
 		if(n.exp instanceof NAME){
 			NAME name = (NAME)n.exp;
 			
-			OPER o = new OPER("b\t"+name.label.toString(),null, null, list);
+			OPER o = new OPER("\tb\t`j0",null, null, list);
 			instructions.add(o);
 		}else{
-			OPER o = new OPER("jr\t's0",null, new Temp[]{n.exp.accept(this)}, list);
+			OPER o = new OPER("\tjr\t`s0",null, new Temp[]{n.exp.accept(this)}, list);
 			instructions.add(o);
 			
 		}
@@ -325,30 +354,54 @@ public class Codegen implements CodeVisitor{
 		if(n.exp instanceof BINOP){
 			
 			BINOP b = (BINOP)n.exp;
-			if(b.binop == BINOP.PLUS && b.right instanceof CONST){
+			if(b.binop == BINOP.PLUS && b.right instanceof CONST && ((CONST)b.right).value < 65536/2){
 				int k = ((CONST)b.right).value;
 				Temp t = new Temp();
-				OPER o = new OPER("lw\t'd0,\t"+ k + "('s0)", new Temp[]{t}, new Temp[]{b.left.accept(this)}, null);
+				
+				OPER o = new OPER("\tlw\t`d0,\t"+ k + "(`s0)", new Temp[]{t}, new Temp[]{b.left.accept(this)}, null);
+				
+				//OPER o = new OPER("\tlw\t`d0,\t"+ Integer.toString(k) + "+" + frame.name+"_framesize(`s0)", new Temp[]{t}, new Temp[]{b.left.accept(this)}, null);
 				instructions.add(o);
 				return t;
-			}else if(b.binop == BINOP.PLUS && b.left instanceof CONST){
+			}else if(b.binop == BINOP.PLUS && b.left instanceof CONST && ((CONST)b.right).value < 65536/2){
 				int k = ((CONST)b.left).value;
 				Temp t = new Temp();
-				OPER o = new OPER("lw\t'd0,\t"+ k + "('s0)", new Temp[]{t}, new Temp[]{b.right.accept(this)}, null);
+				
+				OPER o = new OPER("\tlw\t`d0,\t"+ k + "(`s0)", new Temp[]{t}, new Temp[]{b.right.accept(this)}, null);
+				
+				//OPER o = new OPER("\tlw\t`d0,\t"+Integer.toString(k) + "+" + frame.name+"_framesize(`s0)", new Temp[]{t}, new Temp[]{b.right.accept(this)}, null);
 				instructions.add(o);
 				return t;
 			}else{
 				Temp t = new Temp();
-				OPER o = new OPER("lw\t'd0,\t0('s0)", new Temp[]{t}, new Temp[]{ n.exp.accept(this)}, null);
+				
+				OPER o = new OPER("\tlw\t`d0,\t(`s0)", new Temp[]{t}, new Temp[]{ n.exp.accept(this)}, null);
 				instructions.add(o);
 				return t;
+				//return n.exp.accept(this);
 			}
-			
-		}else{
+		}else if(n.exp instanceof CONST){
+			int k = ((CONST)n.exp).value;
 			Temp t = new Temp();
-			OPER o = new OPER("lw\t'd0,\t0('s0)", new Temp[]{t}, new Temp[]{ n.exp.accept(this)}, null);
+			
+			
+			//OPER o = new OPER("\tlw\t`d0,\t"+ k + "(`s0)", new Temp[]{t}, new Temp[]{b.right.accept(this)}, null);
+			
+			OPER o = new OPER("\tlw\t`d0,\t"+Integer.toString(k) + "+" + frame.name+"_framesize(`s0)", new Temp[]{t}, new Temp[]{new Temp(29)}, null);
 			instructions.add(o);
 			return t;
+			
+		}else{ //(n.exp instanceof TEMP){
+			
+			//OPER o = new OPER("\tlw\t`d0,\t0(`s0)", new Temp[]{t}, new Temp[]{ n.exp.accept(this)}, null);
+			//instructions.add(o);
+			return n.exp.accept(this);
+		//}else{
+		//	Temp t = new Temp();
+			
+		//	OPER o = new OPER("\tlw\t`d0,\t(`s0)", new Temp[]{t}, new Temp[]{ n.exp.accept(this)}, null);
+		//	instructions.add(o);
+		//	return t;
 		}
 	}
 	public void visit(Tree.MOVE n){
@@ -358,33 +411,34 @@ public class Codegen implements CodeVisitor{
 				BINOP b = (BINOP)m.exp;
 				if(b.binop == BINOP.PLUS && b.right instanceof CONST){
 					int k = ((CONST)b.right).value;
-					OPER o = new OPER("sw\t'd0,\t"+ k + "('s0)", null, new Temp[]{n.src.accept(this), b.left.accept(this)}, null);
+					OPER o = new OPER("\tsw\t`s0,\t"+ k + "(`s1)", null, new Temp[]{n.src.accept(this), b.left.accept(this)}, null);
 					instructions.add(o);
 				}else if(b.binop == BINOP.PLUS && b.left instanceof CONST){
 					int k = ((CONST)b.left).value;
-					OPER o = new OPER("sw\t'd0,\t"+ k + "('s0)", null, new Temp[]{n.src.accept(this), b.right.accept(this)}, null);
+					OPER o = new OPER("\tsw\t`s0,\t"+ k + "(`s1)", null, new Temp[]{n.src.accept(this), b.right.accept(this)}, null);
 					instructions.add(o);
 				}else{
 					//TODO not sure here
-					OPER o = new OPER("sw\t'd0,\t0('s0)", new Temp[]{n.src.accept(this)}, new Temp[]{ n.dst.accept(this)}, null);
+					OPER o = new OPER("\tsw\t`s0,\t(`s1)", null, new Temp[]{n.src.accept(this), m.exp.accept(this)}, null);
 					instructions.add(o);
 				}
 				
 			}else{
 				//not BINOP
-				OPER o = new OPER("sw\t'd0,\t0('s0)", new Temp[]{n.src.accept(this)}, new Temp[]{ n.dst.accept(this)}, null);
+				OPER o = new OPER("\tsw\t`s0,\t(`s1)", null, new Temp[]{n.src.accept(this), n.dst.accept(this) }, null);
 				instructions.add(o);
 				
 			}
 		}else{
 			//not MEM
-			Assem.MOVE move = new Assem.MOVE("move\t'd0,\t's0", n.dst.accept(this), n.src.accept(this));
+			Assem.MOVE move = new Assem.MOVE("\tmove\t`d0,\t`s0", n.dst.accept(this), n.src.accept(this));
 			instructions.add(move);
 		}
 	}
 	public Temp visit(NAME n){
 		Temp t = new Temp();
-		OPER o = new OPER("la\t'd0,\t"+n.label, new Temp[]{t}, null, null);
+		OPER o = new OPER("\tla\t`d0,\t"+n.label, new Temp[]{t}, null, null);
+		instructions.add(o);
 		return t;
 	}
 	public void visit(SEQ n){

@@ -20,7 +20,7 @@ public class LABEL extends Stm{
 	}
 	
 	public LinkedList<Exp> kids() {
-		return null;
+		return new LinkedList<Exp>();
 	}
 
 	public Stm build(LinkedList<Exp> exps) {

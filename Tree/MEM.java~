@@ -21,7 +21,7 @@ public class MEM extends Exp{
 	}
 
 	public Exp build(LinkedList<Exp> exps) {
-		return null;
+		return new LinkedList<Exp>();
 	}
 
 }

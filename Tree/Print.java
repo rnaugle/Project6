@@ -8,6 +8,8 @@ public class Print implements IntVisitor{
 
     public Print(java.io.PrintWriter out, Stm s){
 	this.out = out;
+	//this.out = new java.io.PrintWriter(System.out);
+	//System.out.println("why this now work?");
 	this.s = s;
 	s.accept(this);
     }

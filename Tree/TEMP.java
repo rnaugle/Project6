@@ -22,6 +22,6 @@ public class TEMP extends Exp{
 	}
 
 	public Exp build(LinkedList<Exp> exps) {
-		return null;
+		return this;
 	}
 }

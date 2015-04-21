@@ -20,7 +20,7 @@ public class NAME extends Exp{
 	}
 	
 	public LinkedList<Exp> kids() {
-		return null;
+		return new LinkedList<Exp>();
 	}
 
 	public Exp build(LinkedList<Exp> exps) {

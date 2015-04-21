@@ -1,0 +1,48 @@
+DataFrag(
+	.data
+test1_vtable:
+	.word test1.main
+
+)
+ProcFrag(
+MipsFrame(
+main:
+Formals(InReg(t33)
+	InReg(t34)
+	)
+Actuals(InReg(t4)
+	InReg(t5)
+	)
+BadPtr(_BADPTR)
+BadSub(_BADSUB)
+maxArgOffset(0)
+)
+  MOVE("	move	`d0,	`s0" defs(t36 ) uses(t31 ))
+  MOVE("	move	`d0,	`s0" defs(t37 ) uses(t16 ))
+  MOVE("	move	`d0,	`s0" defs(t38 ) uses(t17 ))
+  MOVE("	move	`d0,	`s0" defs(t39 ) uses(t18 ))
+  MOVE("	move	`d0,	`s0" defs(t40 ) uses(t19 ))
+  MOVE("	move	`d0,	`s0" defs(t41 ) uses(t20 ))
+  MOVE("	move	`d0,	`s0" defs(t42 ) uses(t21 ))
+  MOVE("	move	`d0,	`s0" defs(t43 ) uses(t22 ))
+  MOVE("	move	`d0,	`s0" defs(t44 ) uses(t23 ))
+  MOVE("	move	`d0,	`s0" defs(t45 ) uses(t30 ))
+  MOVE("	move	`d0,	`s0" defs(t33 ) uses(t4 ))
+  MOVE("	move	`d0,	`s0" defs(t34 ) uses(t5 ))
+  LABEL("L1")
+  MOVE("	move	`d0,	`s0" defs(t35 ) uses(t0 ))
+  OPER("	addi	`d0,	`s0,	6" defs(t46 ) uses(t0 ))
+  MOVE("	move	`d0,	`s0" defs(t35 ) uses(t46 ))
+  MOVE("	move	`d0,	`s0" defs(t2 ) uses(t0 ))
+  LABEL("L0")
+  MOVE("	move	`d0,	`s0" defs(t30 ) uses(t45 ))
+  MOVE("	move	`d0,	`s0" defs(t23 ) uses(t44 ))
+  MOVE("	move	`d0,	`s0" defs(t22 ) uses(t43 ))
+  MOVE("	move	`d0,	`s0" defs(t21 ) uses(t42 ))
+  MOVE("	move	`d0,	`s0" defs(t20 ) uses(t41 ))
+  MOVE("	move	`d0,	`s0" defs(t19 ) uses(t40 ))
+  MOVE("	move	`d0,	`s0" defs(t18 ) uses(t39 ))
+  MOVE("	move	`d0,	`s0" defs(t17 ) uses(t38 ))
+  MOVE("	move	`d0,	`s0" defs(t16 ) uses(t37 ))
+  MOVE("	move	`d0,	`s0" defs(t31 ) uses(t36 ))
+)

@@ -28,7 +28,7 @@ public class DataFrag extends Frag{
 	
 	public String toString(){
 		String s;
-		s = "\t.data\n";
+		s = data;
 //		if(label == null){
 //			
 //			s+=data+"_vtable:\n";
@@ -40,7 +40,7 @@ public class DataFrag extends Frag{
 //			//}
 //		}else{
 
-			s+= label+":\t.asciiz\t"+ data;
+			//s+= label+":\t.asciiz\t"+ data;
 //		}
 		return s;
 	}

@@ -1,0 +1,472 @@
+Program(
+ AbstractList(
+  ClassDecl(QuickSort null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) a))
+     AbstractList()
+     AbstractList(
+      XinuCallStmt(printint
+       AbstractList(
+        CallExpr(
+         NewObjectExpr(IdentifierType(QS))
+         Start
+         AbstractList(
+          IntegerLiteral(10))
+         0))))
+     IntegerLiteral(0)
+     FUNCTION(main
+      OBJECT(QuickSort)
+      RECORD(
+       FIELD(0 a
+        ARRAY(
+         OBJECT(String))))
+      VOID)))
+   CLASS(QuickSort
+    null
+    RECORD(
+     FIELD(0 main
+      FUNCTION(main
+       OBJECT(QuickSort)
+       RECORD(
+        FIELD(0 a
+         ARRAY(
+          OBJECT(String))))
+       VOID)))
+    RECORD()
+    OBJECT(QuickSort
+     RECORD(
+      FIELD(0 main
+       FUNCTION(main
+        OBJECT(QuickSort)
+        RECORD(
+         FIELD(0 a
+          ARRAY(
+           OBJECT(String))))
+        VOID)))
+     RECORD())))
+  ClassDecl(QS null
+   AbstractList(
+    VarDecl(ArrayType(IntegerType) number null 
+     ARRAY(
+      INT))
+    VarDecl(IntegerType size null 
+     INT))
+   AbstractList(
+    MethodDecl(IntegerType Start
+     AbstractList(
+      Formal(IntegerType sz))
+     AbstractList(
+      VarDecl(IntegerType aux01 null 
+       INT))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(aux01)
+       CallExpr(
+        ThisExpr
+        Init
+        AbstractList(
+         IdentifierExpr(sz))
+        3))
+      AssignStmt(
+       IdentifierExpr(aux01)
+       CallExpr(
+        ThisExpr
+        Print
+        AbstractList()
+        2))
+      XinuCallStmt(printint
+       AbstractList(
+        IntegerLiteral(9999)))
+      AssignStmt(
+       IdentifierExpr(aux01)
+       SubExpr(
+        IdentifierExpr(size)
+        IntegerLiteral(1)))
+      AssignStmt(
+       IdentifierExpr(aux01)
+       CallExpr(
+        ThisExpr
+        Sort
+        AbstractList(
+         IntegerLiteral(0)
+         IdentifierExpr(aux01))
+        1))
+      AssignStmt(
+       IdentifierExpr(aux01)
+       CallExpr(
+        ThisExpr
+        Print
+        AbstractList()
+        2)))
+     IntegerLiteral(0)
+     FUNCTION(Start
+      OBJECT(QS)
+      RECORD(
+       FIELD(0 sz
+        INT))
+      INT))
+    MethodDecl(IntegerType Sort
+     AbstractList(
+      Formal(IntegerType left)
+      Formal(IntegerType right))
+     AbstractList(
+      VarDecl(IntegerType v null 
+       INT)
+      VarDecl(IntegerType i null 
+       INT)
+      VarDecl(IntegerType j null 
+       INT)
+      VarDecl(IntegerType nt null 
+       INT)
+      VarDecl(IntegerType t null 
+       INT)
+      VarDecl(BooleanType cont01 null 
+       BOOLEAN)
+      VarDecl(BooleanType cont02 null 
+       BOOLEAN)
+      VarDecl(IntegerType aux03 null 
+       INT))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(t)
+       IntegerLiteral(0))
+      IfStmt(
+       LesserExpr(
+        IdentifierExpr(left)
+        IdentifierExpr(right))
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(v)
+          ArrayExpr(
+           IdentifierExpr(number)
+           IdentifierExpr(right)))
+         AssignStmt(
+          IdentifierExpr(i)
+          SubExpr(
+           IdentifierExpr(left)
+           IntegerLiteral(1)))
+         AssignStmt(
+          IdentifierExpr(j)
+          IdentifierExpr(right))
+         AssignStmt(
+          IdentifierExpr(cont01)
+          TrueExpr)
+         WhileStmt(
+          IdentifierExpr(cont01)
+          BlockStmt(
+           AbstractList(
+            AssignStmt(
+             IdentifierExpr(cont02)
+             TrueExpr)
+            WhileStmt(
+             IdentifierExpr(cont02)
+             BlockStmt(
+              AbstractList(
+               AssignStmt(
+                IdentifierExpr(i)
+                AddExpr(
+                 IdentifierExpr(i)
+                 IntegerLiteral(1)))
+               AssignStmt(
+                IdentifierExpr(aux03)
+                ArrayExpr(
+                 IdentifierExpr(number)
+                 IdentifierExpr(i)))
+               IfStmt(
+                NotExpr(
+                 LesserExpr(
+                  IdentifierExpr(aux03)
+                  IdentifierExpr(v)))
+                AssignStmt(
+                 IdentifierExpr(cont02)
+                 FalseExpr)
+                AssignStmt(
+                 IdentifierExpr(cont02)
+                 TrueExpr)))))
+            AssignStmt(
+             IdentifierExpr(cont02)
+             TrueExpr)
+            WhileStmt(
+             IdentifierExpr(cont02)
+             BlockStmt(
+              AbstractList(
+               AssignStmt(
+                IdentifierExpr(j)
+                SubExpr(
+                 IdentifierExpr(j)
+                 IntegerLiteral(1)))
+               AssignStmt(
+                IdentifierExpr(aux03)
+                ArrayExpr(
+                 IdentifierExpr(number)
+                 IdentifierExpr(j)))
+               IfStmt(
+                NotExpr(
+                 LesserExpr(
+                  IdentifierExpr(v)
+                  IdentifierExpr(aux03)))
+                AssignStmt(
+                 IdentifierExpr(cont02)
+                 FalseExpr)
+                AssignStmt(
+                 IdentifierExpr(cont02)
+                 TrueExpr)))))
+            AssignStmt(
+             IdentifierExpr(t)
+             ArrayExpr(
+              IdentifierExpr(number)
+              IdentifierExpr(i)))
+            AssignStmt(
+             ArrayExpr(
+              IdentifierExpr(number)
+              IdentifierExpr(i))
+             ArrayExpr(
+              IdentifierExpr(number)
+              IdentifierExpr(j)))
+            AssignStmt(
+             ArrayExpr(
+              IdentifierExpr(number)
+              IdentifierExpr(j))
+             IdentifierExpr(t))
+            IfStmt(
+             LesserExpr(
+              IdentifierExpr(j)
+              AddExpr(
+               IdentifierExpr(i)
+               IntegerLiteral(1)))
+             AssignStmt(
+              IdentifierExpr(cont01)
+              FalseExpr)
+             AssignStmt(
+              IdentifierExpr(cont01)
+              TrueExpr)))))
+         AssignStmt(
+          ArrayExpr(
+           IdentifierExpr(number)
+           IdentifierExpr(j))
+          ArrayExpr(
+           IdentifierExpr(number)
+           IdentifierExpr(i)))
+         AssignStmt(
+          ArrayExpr(
+           IdentifierExpr(number)
+           IdentifierExpr(i))
+          ArrayExpr(
+           IdentifierExpr(number)
+           IdentifierExpr(right)))
+         AssignStmt(
+          ArrayExpr(
+           IdentifierExpr(number)
+           IdentifierExpr(right))
+          IdentifierExpr(t))
+         AssignStmt(
+          IdentifierExpr(nt)
+          CallExpr(
+           ThisExpr
+           Sort
+           AbstractList(
+            IdentifierExpr(left)
+            SubExpr(
+             IdentifierExpr(i)
+             IntegerLiteral(1)))
+           1))
+         AssignStmt(
+          IdentifierExpr(nt)
+          CallExpr(
+           ThisExpr
+           Sort
+           AbstractList(
+            AddExpr(
+             IdentifierExpr(i)
+             IntegerLiteral(1))
+            IdentifierExpr(right))
+           1))))
+       AssignStmt(
+        IdentifierExpr(nt)
+        IntegerLiteral(0))))
+     IntegerLiteral(0)
+     FUNCTION(Sort
+      OBJECT(QS)
+      RECORD(
+       FIELD(0 left
+        INT)
+       FIELD(1 right
+        INT))
+      INT))
+    MethodDecl(IntegerType Print
+     AbstractList()
+     AbstractList(
+      VarDecl(IntegerType j null 
+       INT))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(j)
+       IntegerLiteral(0))
+      WhileStmt(
+       LesserExpr(
+        IdentifierExpr(j)
+        IdentifierExpr(size))
+       BlockStmt(
+        AbstractList(
+         XinuCallStmt(printint
+          AbstractList(
+           ArrayExpr(
+            IdentifierExpr(number)
+            IdentifierExpr(j))))
+         AssignStmt(
+          IdentifierExpr(j)
+          AddExpr(
+           IdentifierExpr(j)
+           IntegerLiteral(1)))))))
+     IntegerLiteral(0)
+     FUNCTION(Print
+      OBJECT(QS)
+      RECORD()
+      INT))
+    MethodDecl(IntegerType Init
+     AbstractList(
+      Formal(IntegerType sz))
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(size)
+       IdentifierExpr(sz))
+      AssignStmt(
+       IdentifierExpr(number)
+       NewArrayExpr(IntegerType
+        AbstractList(
+         IdentifierExpr(sz))))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(0))
+       IntegerLiteral(20))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(1))
+       IntegerLiteral(7))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(2))
+       IntegerLiteral(12))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(3))
+       IntegerLiteral(18))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(4))
+       IntegerLiteral(2))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(5))
+       IntegerLiteral(11))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(6))
+       IntegerLiteral(6))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(7))
+       IntegerLiteral(9))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(8))
+       IntegerLiteral(19))
+      AssignStmt(
+       ArrayExpr(
+        IdentifierExpr(number)
+        IntegerLiteral(9))
+       IntegerLiteral(5)))
+     IntegerLiteral(0)
+     FUNCTION(Init
+      OBJECT(QS)
+      RECORD(
+       FIELD(0 sz
+        INT))
+      INT)))
+   CLASS(QS
+    null
+    RECORD(
+     FIELD(0 Start
+      FUNCTION(Start
+       OBJECT(QS)
+       RECORD(
+        FIELD(0 sz
+         INT))
+       INT))
+     FIELD(1 Sort
+      FUNCTION(Sort
+       OBJECT(QS)
+       RECORD(
+        FIELD(0 left
+         INT)
+        FIELD(1 right
+         INT))
+       INT))
+     FIELD(2 Print
+      FUNCTION(Print
+       OBJECT(QS)
+       RECORD()
+       INT))
+     FIELD(3 Init
+      FUNCTION(Init
+       OBJECT(QS)
+       RECORD(
+        FIELD(0 sz
+         INT))
+       INT)))
+    RECORD(
+     FIELD(0 number
+      ARRAY(
+       INT))
+     FIELD(1 size
+      INT))
+    OBJECT(QS
+     RECORD(
+      FIELD(0 Start
+       FUNCTION(Start
+        OBJECT(QS)
+        RECORD(
+         FIELD(0 sz
+          INT))
+        INT))
+      FIELD(1 Sort
+       FUNCTION(Sort
+        OBJECT(QS)
+        RECORD(
+         FIELD(0 left
+          INT)
+         FIELD(1 right
+          INT))
+        INT))
+      FIELD(2 Print
+       FUNCTION(Print
+        OBJECT(QS)
+        RECORD()
+        INT))
+      FIELD(3 Init
+       FUNCTION(Init
+        OBJECT(QS)
+        RECORD(
+         FIELD(0 sz
+          INT))
+        INT)))
+     RECORD(
+      FIELD(0 number
+       ARRAY(
+        INT))
+      FIELD(1 size
+       INT)))))))

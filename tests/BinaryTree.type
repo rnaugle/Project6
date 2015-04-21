@@ -1,0 +1,1445 @@
+Program(
+ AbstractList(
+  ClassDecl(BinaryTree null
+   AbstractList()
+   AbstractList(
+    MethodDecl(public_static_void main
+     AbstractList(
+      Formal(ArrayType(IdentifierType(String)) a))
+     AbstractList()
+     AbstractList(
+      XinuCallStmt(printint
+       AbstractList(
+        CallExpr(
+         NewObjectExpr(IdentifierType(BT))
+         Start
+         AbstractList()
+         0))))
+     IntegerLiteral(0)
+     FUNCTION(main
+      OBJECT(BinaryTree)
+      RECORD(
+       FIELD(0 a
+        ARRAY(
+         OBJECT(String))))
+      VOID)))
+   CLASS(BinaryTree
+    null
+    RECORD(
+     FIELD(0 main
+      FUNCTION(main
+       OBJECT(BinaryTree)
+       RECORD(
+        FIELD(0 a
+         ARRAY(
+          OBJECT(String))))
+       VOID)))
+    RECORD()
+    OBJECT(BinaryTree
+     RECORD(
+      FIELD(0 main
+       FUNCTION(main
+        OBJECT(BinaryTree)
+        RECORD(
+         FIELD(0 a
+          ARRAY(
+           OBJECT(String))))
+        VOID)))
+     RECORD())))
+  ClassDecl(BT null
+   AbstractList()
+   AbstractList(
+    MethodDecl(IntegerType Start
+     AbstractList()
+     AbstractList(
+      VarDecl(IdentifierType(Tree) root null 
+       OBJECT(Tree))
+      VarDecl(BooleanType ntb null 
+       BOOLEAN)
+      VarDecl(IntegerType nti null 
+       INT))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(root)
+       NewObjectExpr(IdentifierType(Tree)))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(root)
+        Init
+        AbstractList(
+         IntegerLiteral(16))
+        0))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(root)
+        Print
+        AbstractList()
+        18))
+      XinuCallStmt(printint
+       AbstractList(
+        IntegerLiteral(100000000)))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(root)
+        Insert
+        AbstractList(
+         IntegerLiteral(8))
+        12))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(root)
+        Print
+        AbstractList()
+        18))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(root)
+        Insert
+        AbstractList(
+         IntegerLiteral(24))
+        12))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(root)
+        Insert
+        AbstractList(
+         IntegerLiteral(4))
+        12))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(root)
+        Insert
+        AbstractList(
+         IntegerLiteral(12))
+        12))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(root)
+        Insert
+        AbstractList(
+         IntegerLiteral(20))
+        12))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(root)
+        Insert
+        AbstractList(
+         IntegerLiteral(28))
+        12))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(root)
+        Insert
+        AbstractList(
+         IntegerLiteral(14))
+        12))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(root)
+        Print
+        AbstractList()
+        18))
+      XinuCallStmt(printint
+       AbstractList(
+        CallExpr(
+         IdentifierExpr(root)
+         Search
+         AbstractList(
+          IntegerLiteral(24))
+         17)))
+      XinuCallStmt(printint
+       AbstractList(
+        CallExpr(
+         IdentifierExpr(root)
+         Search
+         AbstractList(
+          IntegerLiteral(12))
+         17)))
+      XinuCallStmt(printint
+       AbstractList(
+        CallExpr(
+         IdentifierExpr(root)
+         Search
+         AbstractList(
+          IntegerLiteral(16))
+         17)))
+      XinuCallStmt(printint
+       AbstractList(
+        CallExpr(
+         IdentifierExpr(root)
+         Search
+         AbstractList(
+          IntegerLiteral(50))
+         17)))
+      XinuCallStmt(printint
+       AbstractList(
+        CallExpr(
+         IdentifierExpr(root)
+         Search
+         AbstractList(
+          IntegerLiteral(12))
+         17)))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(root)
+        Delete
+        AbstractList(
+         IntegerLiteral(12))
+        13))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(root)
+        Print
+        AbstractList()
+        18))
+      XinuCallStmt(printint
+       AbstractList(
+        CallExpr(
+         IdentifierExpr(root)
+         Search
+         AbstractList(
+          IntegerLiteral(12))
+         17))))
+     IntegerLiteral(0)
+     FUNCTION(Start
+      OBJECT(BT)
+      RECORD()
+      INT)))
+   CLASS(BT
+    null
+    RECORD(
+     FIELD(0 Start
+      FUNCTION(Start
+       OBJECT(BT)
+       RECORD()
+       INT)))
+    RECORD()
+    OBJECT(BT
+     RECORD(
+      FIELD(0 Start
+       FUNCTION(Start
+        OBJECT(BT)
+        RECORD()
+        INT)))
+     RECORD())))
+  ClassDecl(Tree null
+   AbstractList(
+    VarDecl(IdentifierType(Tree) left null 
+     OBJECT(Tree))
+    VarDecl(IdentifierType(Tree) right null 
+     OBJECT(Tree))
+    VarDecl(IntegerType key null 
+     INT)
+    VarDecl(BooleanType has_left null 
+     BOOLEAN)
+    VarDecl(BooleanType has_right null 
+     BOOLEAN)
+    VarDecl(IdentifierType(Tree) my_null null 
+     OBJECT(Tree)))
+   AbstractList(
+    MethodDecl(BooleanType Init
+     AbstractList(
+      Formal(IntegerType v_key))
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(key)
+       IdentifierExpr(v_key))
+      AssignStmt(
+       IdentifierExpr(has_left)
+       FalseExpr)
+      AssignStmt(
+       IdentifierExpr(has_right)
+       FalseExpr))
+     TrueExpr
+     FUNCTION(Init
+      OBJECT(Tree)
+      RECORD(
+       FIELD(0 v_key
+        INT))
+      BOOLEAN))
+    MethodDecl(BooleanType SetRight
+     AbstractList(
+      Formal(IdentifierType(Tree) rn))
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(right)
+       IdentifierExpr(rn)))
+     TrueExpr
+     FUNCTION(SetRight
+      OBJECT(Tree)
+      RECORD(
+       FIELD(0 rn
+        OBJECT(Tree)))
+      BOOLEAN))
+    MethodDecl(BooleanType SetLeft
+     AbstractList(
+      Formal(IdentifierType(Tree) ln))
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(left)
+       IdentifierExpr(ln)))
+     TrueExpr
+     FUNCTION(SetLeft
+      OBJECT(Tree)
+      RECORD(
+       FIELD(0 ln
+        OBJECT(Tree)))
+      BOOLEAN))
+    MethodDecl(IdentifierType(Tree) GetRight
+     AbstractList()
+     AbstractList()
+     AbstractList()
+     IdentifierExpr(right)
+     FUNCTION(GetRight
+      OBJECT(Tree)
+      RECORD()
+      OBJECT(Tree)))
+    MethodDecl(IdentifierType(Tree) GetLeft
+     AbstractList()
+     AbstractList()
+     AbstractList()
+     IdentifierExpr(left)
+     FUNCTION(GetLeft
+      OBJECT(Tree)
+      RECORD()
+      OBJECT(Tree)))
+    MethodDecl(IntegerType GetKey
+     AbstractList()
+     AbstractList()
+     AbstractList()
+     IdentifierExpr(key)
+     FUNCTION(GetKey
+      OBJECT(Tree)
+      RECORD()
+      INT))
+    MethodDecl(BooleanType SetKey
+     AbstractList(
+      Formal(IntegerType v_key))
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(key)
+       IdentifierExpr(v_key)))
+     TrueExpr
+     FUNCTION(SetKey
+      OBJECT(Tree)
+      RECORD(
+       FIELD(0 v_key
+        INT))
+      BOOLEAN))
+    MethodDecl(BooleanType GetHas_Right
+     AbstractList()
+     AbstractList()
+     AbstractList()
+     IdentifierExpr(has_right)
+     FUNCTION(GetHas_Right
+      OBJECT(Tree)
+      RECORD()
+      BOOLEAN))
+    MethodDecl(BooleanType GetHas_Left
+     AbstractList()
+     AbstractList()
+     AbstractList()
+     IdentifierExpr(has_left)
+     FUNCTION(GetHas_Left
+      OBJECT(Tree)
+      RECORD()
+      BOOLEAN))
+    MethodDecl(BooleanType SetHas_Left
+     AbstractList(
+      Formal(BooleanType val))
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(has_left)
+       IdentifierExpr(val)))
+     TrueExpr
+     FUNCTION(SetHas_Left
+      OBJECT(Tree)
+      RECORD(
+       FIELD(0 val
+        BOOLEAN))
+      BOOLEAN))
+    MethodDecl(BooleanType SetHas_Right
+     AbstractList(
+      Formal(BooleanType val))
+     AbstractList()
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(has_right)
+       IdentifierExpr(val)))
+     TrueExpr
+     FUNCTION(SetHas_Right
+      OBJECT(Tree)
+      RECORD(
+       FIELD(0 val
+        BOOLEAN))
+      BOOLEAN))
+    MethodDecl(BooleanType Compare
+     AbstractList(
+      Formal(IntegerType num1)
+      Formal(IntegerType num2))
+     AbstractList(
+      VarDecl(BooleanType ntb null 
+       BOOLEAN)
+      VarDecl(IntegerType nti null 
+       INT))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(ntb)
+       FalseExpr)
+      AssignStmt(
+       IdentifierExpr(nti)
+       AddExpr(
+        IdentifierExpr(num2)
+        IntegerLiteral(1)))
+      IfStmt(
+       LesserExpr(
+        IdentifierExpr(num1)
+        IdentifierExpr(num2))
+       AssignStmt(
+        IdentifierExpr(ntb)
+        FalseExpr)
+       IfStmt(
+        NotExpr(
+         LesserExpr(
+          IdentifierExpr(num1)
+          IdentifierExpr(nti)))
+        AssignStmt(
+         IdentifierExpr(ntb)
+         FalseExpr)
+        AssignStmt(
+         IdentifierExpr(ntb)
+         TrueExpr))))
+     IdentifierExpr(ntb)
+     FUNCTION(Compare
+      OBJECT(Tree)
+      RECORD(
+       FIELD(0 num1
+        INT)
+       FIELD(1 num2
+        INT))
+      BOOLEAN))
+    MethodDecl(BooleanType Insert
+     AbstractList(
+      Formal(IntegerType v_key))
+     AbstractList(
+      VarDecl(IdentifierType(Tree) new_node null 
+       OBJECT(Tree))
+      VarDecl(BooleanType ntb null 
+       BOOLEAN)
+      VarDecl(BooleanType cont null 
+       BOOLEAN)
+      VarDecl(IntegerType key_aux null 
+       INT)
+      VarDecl(IdentifierType(Tree) current_node null 
+       OBJECT(Tree)))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(new_node)
+       NewObjectExpr(IdentifierType(Tree)))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(new_node)
+        Init
+        AbstractList(
+         IdentifierExpr(v_key))
+        0))
+      AssignStmt(
+       IdentifierExpr(current_node)
+       ThisExpr)
+      AssignStmt(
+       IdentifierExpr(cont)
+       TrueExpr)
+      WhileStmt(
+       IdentifierExpr(cont)
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(key_aux)
+          CallExpr(
+           IdentifierExpr(current_node)
+           GetKey
+           AbstractList()
+           5))
+         IfStmt(
+          LesserExpr(
+           IdentifierExpr(v_key)
+           IdentifierExpr(key_aux))
+          BlockStmt(
+           AbstractList(
+            IfStmt(
+             CallExpr(
+              IdentifierExpr(current_node)
+              GetHas_Left
+              AbstractList()
+              8)
+             AssignStmt(
+              IdentifierExpr(current_node)
+              CallExpr(
+               IdentifierExpr(current_node)
+               GetLeft
+               AbstractList()
+               4))
+             BlockStmt(
+              AbstractList(
+               AssignStmt(
+                IdentifierExpr(cont)
+                FalseExpr)
+               AssignStmt(
+                IdentifierExpr(ntb)
+                CallExpr(
+                 IdentifierExpr(current_node)
+                 SetHas_Left
+                 AbstractList(
+                  TrueExpr)
+                 9))
+               AssignStmt(
+                IdentifierExpr(ntb)
+                CallExpr(
+                 IdentifierExpr(current_node)
+                 SetLeft
+                 AbstractList(
+                  IdentifierExpr(new_node))
+                 2)))))))
+          BlockStmt(
+           AbstractList(
+            IfStmt(
+             CallExpr(
+              IdentifierExpr(current_node)
+              GetHas_Right
+              AbstractList()
+              7)
+             AssignStmt(
+              IdentifierExpr(current_node)
+              CallExpr(
+               IdentifierExpr(current_node)
+               GetRight
+               AbstractList()
+               3))
+             BlockStmt(
+              AbstractList(
+               AssignStmt(
+                IdentifierExpr(cont)
+                FalseExpr)
+               AssignStmt(
+                IdentifierExpr(ntb)
+                CallExpr(
+                 IdentifierExpr(current_node)
+                 SetHas_Right
+                 AbstractList(
+                  TrueExpr)
+                 10))
+               AssignStmt(
+                IdentifierExpr(ntb)
+                CallExpr(
+                 IdentifierExpr(current_node)
+                 SetRight
+                 AbstractList(
+                  IdentifierExpr(new_node))
+                 1))))))))))))
+     TrueExpr
+     FUNCTION(Insert
+      OBJECT(Tree)
+      RECORD(
+       FIELD(0 v_key
+        INT))
+      BOOLEAN))
+    MethodDecl(BooleanType Delete
+     AbstractList(
+      Formal(IntegerType v_key))
+     AbstractList(
+      VarDecl(IdentifierType(Tree) current_node null 
+       OBJECT(Tree))
+      VarDecl(IdentifierType(Tree) parent_node null 
+       OBJECT(Tree))
+      VarDecl(BooleanType cont null 
+       BOOLEAN)
+      VarDecl(BooleanType found null 
+       BOOLEAN)
+      VarDecl(BooleanType is_root null 
+       BOOLEAN)
+      VarDecl(IntegerType key_aux null 
+       INT)
+      VarDecl(BooleanType ntb null 
+       BOOLEAN))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(current_node)
+       ThisExpr)
+      AssignStmt(
+       IdentifierExpr(parent_node)
+       ThisExpr)
+      AssignStmt(
+       IdentifierExpr(cont)
+       TrueExpr)
+      AssignStmt(
+       IdentifierExpr(found)
+       FalseExpr)
+      AssignStmt(
+       IdentifierExpr(is_root)
+       TrueExpr)
+      WhileStmt(
+       IdentifierExpr(cont)
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(key_aux)
+          CallExpr(
+           IdentifierExpr(current_node)
+           GetKey
+           AbstractList()
+           5))
+         IfStmt(
+          LesserExpr(
+           IdentifierExpr(v_key)
+           IdentifierExpr(key_aux))
+          IfStmt(
+           CallExpr(
+            IdentifierExpr(current_node)
+            GetHas_Left
+            AbstractList()
+            8)
+           BlockStmt(
+            AbstractList(
+             AssignStmt(
+              IdentifierExpr(parent_node)
+              IdentifierExpr(current_node))
+             AssignStmt(
+              IdentifierExpr(current_node)
+              CallExpr(
+               IdentifierExpr(current_node)
+               GetLeft
+               AbstractList()
+               4))))
+           AssignStmt(
+            IdentifierExpr(cont)
+            FalseExpr))
+          IfStmt(
+           LesserExpr(
+            IdentifierExpr(key_aux)
+            IdentifierExpr(v_key))
+           IfStmt(
+            CallExpr(
+             IdentifierExpr(current_node)
+             GetHas_Right
+             AbstractList()
+             7)
+            BlockStmt(
+             AbstractList(
+              AssignStmt(
+               IdentifierExpr(parent_node)
+               IdentifierExpr(current_node))
+              AssignStmt(
+               IdentifierExpr(current_node)
+               CallExpr(
+                IdentifierExpr(current_node)
+                GetRight
+                AbstractList()
+                3))))
+            AssignStmt(
+             IdentifierExpr(cont)
+             FalseExpr))
+           BlockStmt(
+            AbstractList(
+             IfStmt(
+              IdentifierExpr(is_root)
+              IfStmt(
+               AndExpr(
+                NotExpr(
+                 CallExpr(
+                  IdentifierExpr(current_node)
+                  GetHas_Right
+                  AbstractList()
+                  7))
+                NotExpr(
+                 CallExpr(
+                  IdentifierExpr(current_node)
+                  GetHas_Left
+                  AbstractList()
+                  8)))
+               AssignStmt(
+                IdentifierExpr(ntb)
+                TrueExpr)
+               AssignStmt(
+                IdentifierExpr(ntb)
+                CallExpr(
+                 ThisExpr
+                 Remove
+                 AbstractList(
+                  IdentifierExpr(parent_node)
+                  IdentifierExpr(current_node))
+                 14)))
+              AssignStmt(
+               IdentifierExpr(ntb)
+               CallExpr(
+                ThisExpr
+                Remove
+                AbstractList(
+                 IdentifierExpr(parent_node)
+                 IdentifierExpr(current_node))
+                14)))
+             AssignStmt(
+              IdentifierExpr(found)
+              TrueExpr)
+             AssignStmt(
+              IdentifierExpr(cont)
+              FalseExpr)))))
+         AssignStmt(
+          IdentifierExpr(is_root)
+          FalseExpr)))))
+     IdentifierExpr(found)
+     FUNCTION(Delete
+      OBJECT(Tree)
+      RECORD(
+       FIELD(0 v_key
+        INT))
+      BOOLEAN))
+    MethodDecl(BooleanType Remove
+     AbstractList(
+      Formal(IdentifierType(Tree) p_node)
+      Formal(IdentifierType(Tree) c_node))
+     AbstractList(
+      VarDecl(BooleanType ntb null 
+       BOOLEAN)
+      VarDecl(IntegerType auxkey1 null 
+       INT)
+      VarDecl(IntegerType auxkey2 null 
+       INT))
+     AbstractList(
+      IfStmt(
+       CallExpr(
+        IdentifierExpr(c_node)
+        GetHas_Left
+        AbstractList()
+        8)
+       AssignStmt(
+        IdentifierExpr(ntb)
+        CallExpr(
+         ThisExpr
+         RemoveLeft
+         AbstractList(
+          IdentifierExpr(p_node)
+          IdentifierExpr(c_node))
+         16))
+       IfStmt(
+        CallExpr(
+         IdentifierExpr(c_node)
+         GetHas_Right
+         AbstractList()
+         7)
+        AssignStmt(
+         IdentifierExpr(ntb)
+         CallExpr(
+          ThisExpr
+          RemoveRight
+          AbstractList(
+           IdentifierExpr(p_node)
+           IdentifierExpr(c_node))
+          15))
+        BlockStmt(
+         AbstractList(
+          AssignStmt(
+           IdentifierExpr(auxkey1)
+           CallExpr(
+            IdentifierExpr(c_node)
+            GetKey
+            AbstractList()
+            5))
+          AssignStmt(
+           IdentifierExpr(auxkey2)
+           CallExpr(
+            CallExpr(
+             IdentifierExpr(p_node)
+             GetLeft
+             AbstractList()
+             4)
+            GetKey
+            AbstractList()
+            5))
+          IfStmt(
+           CallExpr(
+            ThisExpr
+            Compare
+            AbstractList(
+             IdentifierExpr(auxkey1)
+             IdentifierExpr(auxkey2))
+            11)
+           BlockStmt(
+            AbstractList(
+             AssignStmt(
+              IdentifierExpr(ntb)
+              CallExpr(
+               IdentifierExpr(p_node)
+               SetLeft
+               AbstractList(
+                IdentifierExpr(my_null))
+               2))
+             AssignStmt(
+              IdentifierExpr(ntb)
+              CallExpr(
+               IdentifierExpr(p_node)
+               SetHas_Left
+               AbstractList(
+                FalseExpr)
+               9))))
+           BlockStmt(
+            AbstractList(
+             AssignStmt(
+              IdentifierExpr(ntb)
+              CallExpr(
+               IdentifierExpr(p_node)
+               SetRight
+               AbstractList(
+                IdentifierExpr(my_null))
+               1))
+             AssignStmt(
+              IdentifierExpr(ntb)
+              CallExpr(
+               IdentifierExpr(p_node)
+               SetHas_Right
+               AbstractList(
+                FalseExpr)
+               10))))))))))
+     TrueExpr
+     FUNCTION(Remove
+      OBJECT(Tree)
+      RECORD(
+       FIELD(0 p_node
+        OBJECT(Tree))
+       FIELD(1 c_node
+        OBJECT(Tree)))
+      BOOLEAN))
+    MethodDecl(BooleanType RemoveRight
+     AbstractList(
+      Formal(IdentifierType(Tree) p_node)
+      Formal(IdentifierType(Tree) c_node))
+     AbstractList(
+      VarDecl(BooleanType ntb null 
+       BOOLEAN))
+     AbstractList(
+      WhileStmt(
+       CallExpr(
+        IdentifierExpr(c_node)
+        GetHas_Right
+        AbstractList()
+        7)
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(ntb)
+          CallExpr(
+           IdentifierExpr(c_node)
+           SetKey
+           AbstractList(
+            CallExpr(
+             CallExpr(
+              IdentifierExpr(c_node)
+              GetRight
+              AbstractList()
+              3)
+             GetKey
+             AbstractList()
+             5))
+           6))
+         AssignStmt(
+          IdentifierExpr(p_node)
+          IdentifierExpr(c_node))
+         AssignStmt(
+          IdentifierExpr(c_node)
+          CallExpr(
+           IdentifierExpr(c_node)
+           GetRight
+           AbstractList()
+           3)))))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(p_node)
+        SetRight
+        AbstractList(
+         IdentifierExpr(my_null))
+        1))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(p_node)
+        SetHas_Right
+        AbstractList(
+         FalseExpr)
+        10)))
+     TrueExpr
+     FUNCTION(RemoveRight
+      OBJECT(Tree)
+      RECORD(
+       FIELD(0 p_node
+        OBJECT(Tree))
+       FIELD(1 c_node
+        OBJECT(Tree)))
+      BOOLEAN))
+    MethodDecl(BooleanType RemoveLeft
+     AbstractList(
+      Formal(IdentifierType(Tree) p_node)
+      Formal(IdentifierType(Tree) c_node))
+     AbstractList(
+      VarDecl(BooleanType ntb null 
+       BOOLEAN))
+     AbstractList(
+      WhileStmt(
+       CallExpr(
+        IdentifierExpr(c_node)
+        GetHas_Left
+        AbstractList()
+        8)
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(ntb)
+          CallExpr(
+           IdentifierExpr(c_node)
+           SetKey
+           AbstractList(
+            CallExpr(
+             CallExpr(
+              IdentifierExpr(c_node)
+              GetLeft
+              AbstractList()
+              4)
+             GetKey
+             AbstractList()
+             5))
+           6))
+         AssignStmt(
+          IdentifierExpr(p_node)
+          IdentifierExpr(c_node))
+         AssignStmt(
+          IdentifierExpr(c_node)
+          CallExpr(
+           IdentifierExpr(c_node)
+           GetLeft
+           AbstractList()
+           4)))))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(p_node)
+        SetLeft
+        AbstractList(
+         IdentifierExpr(my_null))
+        2))
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        IdentifierExpr(p_node)
+        SetHas_Left
+        AbstractList(
+         FalseExpr)
+        9)))
+     TrueExpr
+     FUNCTION(RemoveLeft
+      OBJECT(Tree)
+      RECORD(
+       FIELD(0 p_node
+        OBJECT(Tree))
+       FIELD(1 c_node
+        OBJECT(Tree)))
+      BOOLEAN))
+    MethodDecl(IntegerType Search
+     AbstractList(
+      Formal(IntegerType v_key))
+     AbstractList(
+      VarDecl(BooleanType cont null 
+       BOOLEAN)
+      VarDecl(IntegerType ifound null 
+       INT)
+      VarDecl(IdentifierType(Tree) current_node null 
+       OBJECT(Tree))
+      VarDecl(IntegerType key_aux null 
+       INT))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(current_node)
+       ThisExpr)
+      AssignStmt(
+       IdentifierExpr(cont)
+       TrueExpr)
+      AssignStmt(
+       IdentifierExpr(ifound)
+       IntegerLiteral(0))
+      WhileStmt(
+       IdentifierExpr(cont)
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(key_aux)
+          CallExpr(
+           IdentifierExpr(current_node)
+           GetKey
+           AbstractList()
+           5))
+         IfStmt(
+          LesserExpr(
+           IdentifierExpr(v_key)
+           IdentifierExpr(key_aux))
+          IfStmt(
+           CallExpr(
+            IdentifierExpr(current_node)
+            GetHas_Left
+            AbstractList()
+            8)
+           AssignStmt(
+            IdentifierExpr(current_node)
+            CallExpr(
+             IdentifierExpr(current_node)
+             GetLeft
+             AbstractList()
+             4))
+           AssignStmt(
+            IdentifierExpr(cont)
+            FalseExpr))
+          IfStmt(
+           LesserExpr(
+            IdentifierExpr(key_aux)
+            IdentifierExpr(v_key))
+           IfStmt(
+            CallExpr(
+             IdentifierExpr(current_node)
+             GetHas_Right
+             AbstractList()
+             7)
+            AssignStmt(
+             IdentifierExpr(current_node)
+             CallExpr(
+              IdentifierExpr(current_node)
+              GetRight
+              AbstractList()
+              3))
+            AssignStmt(
+             IdentifierExpr(cont)
+             FalseExpr))
+           BlockStmt(
+            AbstractList(
+             AssignStmt(
+              IdentifierExpr(ifound)
+              IntegerLiteral(1))
+             AssignStmt(
+              IdentifierExpr(cont)
+              FalseExpr)))))))))
+     IdentifierExpr(ifound)
+     FUNCTION(Search
+      OBJECT(Tree)
+      RECORD(
+       FIELD(0 v_key
+        INT))
+      INT))
+    MethodDecl(BooleanType Print
+     AbstractList()
+     AbstractList(
+      VarDecl(IdentifierType(Tree) current_node null 
+       OBJECT(Tree))
+      VarDecl(BooleanType ntb null 
+       BOOLEAN))
+     AbstractList(
+      AssignStmt(
+       IdentifierExpr(current_node)
+       ThisExpr)
+      AssignStmt(
+       IdentifierExpr(ntb)
+       CallExpr(
+        ThisExpr
+        RecPrint
+        AbstractList(
+         IdentifierExpr(current_node))
+        19)))
+     TrueExpr
+     FUNCTION(Print
+      OBJECT(Tree)
+      RECORD()
+      BOOLEAN))
+    MethodDecl(BooleanType RecPrint
+     AbstractList(
+      Formal(IdentifierType(Tree) node))
+     AbstractList(
+      VarDecl(BooleanType ntb null 
+       BOOLEAN))
+     AbstractList(
+      IfStmt(
+       CallExpr(
+        IdentifierExpr(node)
+        GetHas_Left
+        AbstractList()
+        8)
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(ntb)
+          CallExpr(
+           ThisExpr
+           RecPrint
+           AbstractList(
+            CallExpr(
+             IdentifierExpr(node)
+             GetLeft
+             AbstractList()
+             4))
+           19))))
+       AssignStmt(
+        IdentifierExpr(ntb)
+        TrueExpr))
+      XinuCallStmt(printint
+       AbstractList(
+        CallExpr(
+         IdentifierExpr(node)
+         GetKey
+         AbstractList()
+         5)))
+      IfStmt(
+       CallExpr(
+        IdentifierExpr(node)
+        GetHas_Right
+        AbstractList()
+        7)
+       BlockStmt(
+        AbstractList(
+         AssignStmt(
+          IdentifierExpr(ntb)
+          CallExpr(
+           ThisExpr
+           RecPrint
+           AbstractList(
+            CallExpr(
+             IdentifierExpr(node)
+             GetRight
+             AbstractList()
+             3))
+           19))))
+       AssignStmt(
+        IdentifierExpr(ntb)
+        TrueExpr)))
+     TrueExpr
+     FUNCTION(RecPrint
+      OBJECT(Tree)
+      RECORD(
+       FIELD(0 node
+        OBJECT(Tree)))
+      BOOLEAN)))
+   CLASS(Tree
+    null
+    RECORD(
+     FIELD(0 Init
+      FUNCTION(Init
+       OBJECT(Tree)
+       RECORD(
+        FIELD(0 v_key
+         INT))
+       BOOLEAN))
+     FIELD(1 SetRight
+      FUNCTION(SetRight
+       OBJECT(Tree)
+       RECORD(
+        FIELD(0 rn
+         OBJECT(Tree)))
+       BOOLEAN))
+     FIELD(2 SetLeft
+      FUNCTION(SetLeft
+       OBJECT(Tree)
+       RECORD(
+        FIELD(0 ln
+         OBJECT(Tree)))
+       BOOLEAN))
+     FIELD(3 GetRight
+      FUNCTION(GetRight
+       OBJECT(Tree)
+       RECORD()
+       OBJECT(Tree)))
+     FIELD(4 GetLeft
+      FUNCTION(GetLeft
+       OBJECT(Tree)
+       RECORD()
+       OBJECT(Tree)))
+     FIELD(5 GetKey
+      FUNCTION(GetKey
+       OBJECT(Tree)
+       RECORD()
+       INT))
+     FIELD(6 SetKey
+      FUNCTION(SetKey
+       OBJECT(Tree)
+       RECORD(
+        FIELD(0 v_key
+         INT))
+       BOOLEAN))
+     FIELD(7 GetHas_Right
+      FUNCTION(GetHas_Right
+       OBJECT(Tree)
+       RECORD()
+       BOOLEAN))
+     FIELD(8 GetHas_Left
+      FUNCTION(GetHas_Left
+       OBJECT(Tree)
+       RECORD()
+       BOOLEAN))
+     FIELD(9 SetHas_Left
+      FUNCTION(SetHas_Left
+       OBJECT(Tree)
+       RECORD(
+        FIELD(0 val
+         BOOLEAN))
+       BOOLEAN))
+     FIELD(10 SetHas_Right
+      FUNCTION(SetHas_Right
+       OBJECT(Tree)
+       RECORD(
+        FIELD(0 val
+         BOOLEAN))
+       BOOLEAN))
+     FIELD(11 Compare
+      FUNCTION(Compare
+       OBJECT(Tree)
+       RECORD(
+        FIELD(0 num1
+         INT)
+        FIELD(1 num2
+         INT))
+       BOOLEAN))
+     FIELD(12 Insert
+      FUNCTION(Insert
+       OBJECT(Tree)
+       RECORD(
+        FIELD(0 v_key
+         INT))
+       BOOLEAN))
+     FIELD(13 Delete
+      FUNCTION(Delete
+       OBJECT(Tree)
+       RECORD(
+        FIELD(0 v_key
+         INT))
+       BOOLEAN))
+     FIELD(14 Remove
+      FUNCTION(Remove
+       OBJECT(Tree)
+       RECORD(
+        FIELD(0 p_node
+         OBJECT(Tree))
+        FIELD(1 c_node
+         OBJECT(Tree)))
+       BOOLEAN))
+     FIELD(15 RemoveRight
+      FUNCTION(RemoveRight
+       OBJECT(Tree)
+       RECORD(
+        FIELD(0 p_node
+         OBJECT(Tree))
+        FIELD(1 c_node
+         OBJECT(Tree)))
+       BOOLEAN))
+     FIELD(16 RemoveLeft
+      FUNCTION(RemoveLeft
+       OBJECT(Tree)
+       RECORD(
+        FIELD(0 p_node
+         OBJECT(Tree))
+        FIELD(1 c_node
+         OBJECT(Tree)))
+       BOOLEAN))
+     FIELD(17 Search
+      FUNCTION(Search
+       OBJECT(Tree)
+       RECORD(
+        FIELD(0 v_key
+         INT))
+       INT))
+     FIELD(18 Print
+      FUNCTION(Print
+       OBJECT(Tree)
+       RECORD()
+       BOOLEAN))
+     FIELD(19 RecPrint
+      FUNCTION(RecPrint
+       OBJECT(Tree)
+       RECORD(
+        FIELD(0 node
+         OBJECT(Tree)))
+       BOOLEAN)))
+    RECORD(
+     FIELD(0 left
+      OBJECT(Tree))
+     FIELD(1 right
+      OBJECT(Tree))
+     FIELD(2 key
+      INT)
+     FIELD(3 has_left
+      BOOLEAN)
+     FIELD(4 has_right
+      BOOLEAN)
+     FIELD(5 my_null
+      OBJECT(Tree)))
+    OBJECT(Tree
+     RECORD(
+      FIELD(0 Init
+       FUNCTION(Init
+        OBJECT(Tree)
+        RECORD(
+         FIELD(0 v_key
+          INT))
+        BOOLEAN))
+      FIELD(1 SetRight
+       FUNCTION(SetRight
+        OBJECT(Tree)
+        RECORD(
+         FIELD(0 rn
+          OBJECT(Tree)))
+        BOOLEAN))
+      FIELD(2 SetLeft
+       FUNCTION(SetLeft
+        OBJECT(Tree)
+        RECORD(
+         FIELD(0 ln
+          OBJECT(Tree)))
+        BOOLEAN))
+      FIELD(3 GetRight
+       FUNCTION(GetRight
+        OBJECT(Tree)
+        RECORD()
+        OBJECT(Tree)))
+      FIELD(4 GetLeft
+       FUNCTION(GetLeft
+        OBJECT(Tree)
+        RECORD()
+        OBJECT(Tree)))
+      FIELD(5 GetKey
+       FUNCTION(GetKey
+        OBJECT(Tree)
+        RECORD()
+        INT))
+      FIELD(6 SetKey
+       FUNCTION(SetKey
+        OBJECT(Tree)
+        RECORD(
+         FIELD(0 v_key
+          INT))
+        BOOLEAN))
+      FIELD(7 GetHas_Right
+       FUNCTION(GetHas_Right
+        OBJECT(Tree)
+        RECORD()
+        BOOLEAN))
+      FIELD(8 GetHas_Left
+       FUNCTION(GetHas_Left
+        OBJECT(Tree)
+        RECORD()
+        BOOLEAN))
+      FIELD(9 SetHas_Left
+       FUNCTION(SetHas_Left
+        OBJECT(Tree)
+        RECORD(
+         FIELD(0 val
+          BOOLEAN))
+        BOOLEAN))
+      FIELD(10 SetHas_Right
+       FUNCTION(SetHas_Right
+        OBJECT(Tree)
+        RECORD(
+         FIELD(0 val
+          BOOLEAN))
+        BOOLEAN))
+      FIELD(11 Compare
+       FUNCTION(Compare
+        OBJECT(Tree)
+        RECORD(
+         FIELD(0 num1
+          INT)
+         FIELD(1 num2
+          INT))
+        BOOLEAN))
+      FIELD(12 Insert
+       FUNCTION(Insert
+        OBJECT(Tree)
+        RECORD(
+         FIELD(0 v_key
+          INT))
+        BOOLEAN))
+      FIELD(13 Delete
+       FUNCTION(Delete
+        OBJECT(Tree)
+        RECORD(
+         FIELD(0 v_key
+          INT))
+        BOOLEAN))
+      FIELD(14 Remove
+       FUNCTION(Remove
+        OBJECT(Tree)
+        RECORD(
+         FIELD(0 p_node
+          OBJECT(Tree))
+         FIELD(1 c_node
+          OBJECT(Tree)))
+        BOOLEAN))
+      FIELD(15 RemoveRight
+       FUNCTION(RemoveRight
+        OBJECT(Tree)
+        RECORD(
+         FIELD(0 p_node
+          OBJECT(Tree))
+         FIELD(1 c_node
+          OBJECT(Tree)))
+        BOOLEAN))
+      FIELD(16 RemoveLeft
+       FUNCTION(RemoveLeft
+        OBJECT(Tree)
+        RECORD(
+         FIELD(0 p_node
+          OBJECT(Tree))
+         FIELD(1 c_node
+          OBJECT(Tree)))
+        BOOLEAN))
+      FIELD(17 Search
+       FUNCTION(Search
+        OBJECT(Tree)
+        RECORD(
+         FIELD(0 v_key
+          INT))
+        INT))
+      FIELD(18 Print
+       FUNCTION(Print
+        OBJECT(Tree)
+        RECORD()
+        BOOLEAN))
+      FIELD(19 RecPrint
+       FUNCTION(RecPrint
+        OBJECT(Tree)
+        RECORD(
+         FIELD(0 node
+          OBJECT(Tree)))
+        BOOLEAN)))
+     RECORD(
+      FIELD(0 left
+       OBJECT(Tree))
+      FIELD(1 right
+       OBJECT(Tree))
+      FIELD(2 key
+       INT)
+      FIELD(3 has_left
+       BOOLEAN)
+      FIELD(4 has_right
+       BOOLEAN)
+      FIELD(5 my_null
+       OBJECT(Tree))))))))
