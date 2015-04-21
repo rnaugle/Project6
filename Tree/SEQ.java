@@ -23,10 +23,10 @@ public class SEQ extends Stm{
 	}
 	
 	public LinkedList<Exp> kids() {
-		return new LinkedList<Exp>();
+		throw new Error("kids() not applicable to SEQ");
 	}
 
 	public Stm build(LinkedList<Exp> exps) {
-		return null;
+		throw new Error("build() not applicable to SEQ");
 	}
 }

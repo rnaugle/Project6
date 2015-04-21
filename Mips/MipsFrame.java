@@ -162,19 +162,19 @@ public class MipsFrame extends Frame{
 	//		procEntryExit1(traced.get(i));
 
 	//	}
-		List<Tree.Stm> traced2 = new List<Tree.Stm>();
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp()), new Tree.TEMP(new Temp.Temp(31))));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp()), new Tree.TEMP(new Temp.Temp(16))));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp()), new Tree.TEMP(new Temp.Temp(17))));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp()), new Tree.TEMP(new Temp.Temp(18))));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp()), new Tree.TEMP(new Temp.Temp(19))));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp()), new Tree.TEMP(new Temp.Temp(20))));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp()), new Tree.TEMP(new Temp.Temp(21))));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp()), new Tree.TEMP(new Temp.Temp(22))));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp()), new Tree.TEMP(new Temp.Temp(23))));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp()), new Tree.TEMP(new Temp.Temp(30))));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp(33)), new Tree.TEMP(new Temp.Temp(4))));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp(34)), new Tree.TEMP(new Temp.Temp(5))));
+		LinkedList<Tree.Stm> traced2 = new LinkedList<Tree.Stm>();
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp()), new Tree.TEMP(new Temp(31))));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp()), new Tree.TEMP(new Temp(16))));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp()), new Tree.TEMP(new Temp(17))));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp()), new Tree.TEMP(new Temp(18))));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp()), new Tree.TEMP(new Temp(19))));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp()), new Tree.TEMP(new Temp(20))));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp()), new Tree.TEMP(new Temp(21))));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp()), new Tree.TEMP(new Temp(22))));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp()), new Tree.TEMP(new Temp(23))));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp()), new Tree.TEMP(new Temp(30))));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp(33)), new Tree.TEMP(new Temp(4))));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp(34)), new Tree.TEMP(new Temp(5))));
 
 
 		for ( int i = 0; i<traced.size(); i++)
@@ -182,16 +182,16 @@ public class MipsFrame extends Frame{
 			traced2.add(procEntryExit1(traced.get(i)));
 		}
 
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp(30)), new Tree.TEMP(new Temp.Temp())));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp(23)), new Tree.TEMP(new Temp.Temp())));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp(22)), new Tree.TEMP(new Temp.Temp())));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp(21)), new Tree.TEMP(new Temp.Temp())));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp(20)), new Tree.TEMP(new Temp.Temp())));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp(19)), new Tree.TEMP(new Temp.Temp())));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp(18)), new Tree.TEMP(new Temp.Temp())));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp(17)), new Tree.TEMP(new Temp.Temp())));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp(16)), new Tree.TEMP(new Temp.Temp())));
-		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp.Temp(31)), new Tree.TEMP(new Temp.Temp())));	
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp(30)), new Tree.TEMP(new Temp())));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp(23)), new Tree.TEMP(new Temp())));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp(22)), new Tree.TEMP(new Temp())));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp(21)), new Tree.TEMP(new Temp())));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp(20)), new Tree.TEMP(new Temp())));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp(19)), new Tree.TEMP(new Temp())));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp(18)), new Tree.TEMP(new Temp())));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp(17)), new Tree.TEMP(new Temp())));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp(16)), new Tree.TEMP(new Temp())));
+		traced2.add(new Tree.MOVE(new Tree.TEMP(new Temp(31)), new Tree.TEMP(new Temp())));	
 
 		traced = traced2;	
 	}
