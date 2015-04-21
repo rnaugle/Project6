@@ -200,8 +200,7 @@ public class MipsFrame extends Frame{
 		return body;
 	}
 	public List<Assem.Instr> codeGen(List<Tree.Stm> traced) {		
-		Codegen	c = new Codegen(traced);	
-		return c.instructions;
+		return null;
 	}
 	
 
