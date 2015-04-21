@@ -14,7 +14,12 @@ Program(
        IdentifierExpr(y)
        one
        AbstractList(
-        IntegerLiteral(7))))
+        IntegerLiteral(7)
+        IntegerLiteral(8)
+        IntegerLiteral(9)
+        IntegerLiteral(10)
+        IntegerLiteral(11)
+        IntegerLiteral(12))))
       VarDecl(IntegerType j
       CallExpr(
        IdentifierExpr(y)
@@ -48,7 +53,12 @@ Program(
    AbstractList(
     MethodDecl(IntegerType one
      AbstractList(
-      Formal(IntegerType j))
+      Formal(IntegerType j)
+      Formal(IntegerType k)
+      Formal(IntegerType a)
+      Formal(IntegerType b)
+      Formal(IntegerType c)
+      Formal(IntegerType d))
      AbstractList()
      AbstractList(
       AssignStmt(

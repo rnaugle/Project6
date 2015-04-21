@@ -59,6 +59,11 @@ SEQ(
            CONST(0)))
          TEMP(t36)
          CONST(7)
+         CONST(8)
+         CONST(9)
+         CONST(10)
+         CONST(11)
+         CONST(12)
         ))))
      MOVE(
       TEMP(t37)
@@ -161,9 +166,19 @@ MipsFrame(
 yellow.one:
 Formals(InReg(t46)
 	InReg(t47)
+	InReg(t48)
+	InReg(t49)
+	InReg(t50)
+	InReg(t51)
+	InReg(t52)
 	)
 Actuals(InReg(t4)
 	InReg(t5)
+	InReg(t6)
+	InReg(t7)
+	InFrame(16)
+	InFrame(20)
+	InFrame(24)
 	)
 BadPtr(_BADPTR)
 BadSub(_BADSUB)
@@ -173,26 +188,26 @@ SEQ(
   ESEQ(
    SEQ(
     MOVE(
-     TEMP(t48)
+     TEMP(t53)
      TEMP(t46))
     CJUMP(EQ
-     TEMP(t48)
+     TEMP(t53)
      CONST(0)
      _BADPTR L6))
    ESEQ(
     LABEL(L6)
     MEM(
      BINOP(PLUS
-      TEMP(t48)
+      TEMP(t53)
       CONST(4)))))
   ESEQ(
    SEQ(
     MOVE(
-     TEMP(t49)
+     TEMP(t54)
      TEMP(t46))
     SEQ(
      CJUMP(EQ
-      TEMP(t49)
+      TEMP(t54)
       CONST(0)
       _BADPTR L7)
      LABEL(L7)))
@@ -201,10 +216,10 @@ SEQ(
      BINOP(PLUS
       MEM(
        BINOP(PLUS
-        TEMP(t49)
+        TEMP(t54)
         CONST(-4)))
       CONST(4)))
-    TEMP(t49)
+    TEMP(t54)
    )))
  MOVE(
   TEMP(t2)
@@ -215,7 +230,7 @@ SEQ(
 ProcFrag(
 MipsFrame(
 yellow.two:
-Formals(InReg(t50)
+Formals(InReg(t55)
 	)
 Actuals(InReg(t4)
 	)

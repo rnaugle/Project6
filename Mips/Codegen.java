@@ -5,8 +5,8 @@ import Temp.*;
 import java.util.ArrayList;
 public class Codegen implements CodeVisitor{
 	
-	Frame.Frame frame;
-	Temp caller[]{
+	Mips.MipsFrame frame;
+	Temp caller[] = {
 			new Temp(31),
 			new Temp(4),
 			new Temp(5),
@@ -24,7 +24,7 @@ public class Codegen implements CodeVisitor{
 			new Temp(25),
 			new Temp(2),
 			new Temp(3),
-	}
+	};
 	
 	public Codegen(){
 		instructions = new ArrayList<Instr>();
@@ -32,7 +32,15 @@ public class Codegen implements CodeVisitor{
 	
 	public Codegen(Frame.Frame f){
 		instructions = new ArrayList<Instr>();
-		frame = f;
+		frame = (MipsFrame)f;
+	}
+	
+	public Codegen(List<Stm> stms){
+		instructions = new ArrayList<Instr>();
+		//frame = (MipsFrame)f;
+		for(Stm s : stms){
+			s.accept(this);
+		}
 	}
 	
 	
@@ -195,8 +203,47 @@ public class Codegen implements CodeVisitor{
 	}
 	public Temp visit(CALL n){
 		//TODO not sure here
-		Temp
-		return null;
+		//Temp
+//		Assem.MOVE move = new Assem.MOVE("move\t'd0,\t's0", new Temp(4), t);
+//		instructions.add(move);
+//		offset += 4;
+		ArrayList<Temp> args = new ArrayList<Temp>();
+		int i = 0;
+		int offset = 0;
+		for(Exp e : n.args){
+			offset += 4;
+			if(i < 4){				
+				Temp t = e.accept(this);
+				Assem.MOVE move = new Assem.MOVE("move\t'd0,\t's0", new Temp(4 + i), t);
+				instructions.add(move);
+				args.add(new Temp(4 + i));
+			}else{
+				Temp t2 = e.accept(this);
+				OPER o2 = new OPER("sw\t's0,\t" + offset + "('s2)", null, new Temp[]{t2, new Temp(29)}, null);
+				instructions.add(o2);
+				//args.add(new Temp(4 + i));
+				//TODO see what happens with multiple args for contructor
+			}
+			i++;
+		}
+		
+		if(frame.maxArgOffset < offset){
+			frame.maxArgOffset = offset;
+		}
+		
+		if(n.func instanceof NAME){
+			NAME name = (NAME)n.func;
+			OPER o3 = new OPER("jal\t"+name.label.name, caller, args.toArray(new Temp[args.size()]), null);
+			instructions.add(o3);
+		}else{
+			Temp t3 = n.func.accept(this);
+			args.add(0, t3);
+			OPER o4 = new OPER("jalr\t's0", caller, args.toArray(new Temp[args.size()]), null);
+			instructions.add(o4);
+		}
+		
+		
+		return new Temp(2);
 	}
 	public void visit(CJUMP n){
 		int k = n.relop;
@@ -242,6 +289,7 @@ public class Codegen implements CodeVisitor{
 	}
 	
 	public void visit(EXP n){
+		Temp t = n.exp.accept(this);
 		return;
 	}
 	public Temp visit(Exp n){
