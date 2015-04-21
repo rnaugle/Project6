@@ -45,7 +45,7 @@ public class BINOP extends Exp{
 	}
 
 	public Exp build(LinkedList<Exp> exps) {
-		return new BINOP(binop,exps.get(0),exps.get(1));
+		return new BINOP(binop,exps.get(0),exps.get(exps.size()-1));
 	}
 
 

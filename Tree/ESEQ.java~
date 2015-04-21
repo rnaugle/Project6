@@ -1,11 +1,14 @@
 package Tree;
 import java.util.LinkedList;
-public class CONST extends Exp{
-	public int value;
-	public CONST(int v){
-		value = v;
-	}
+public class ESEQ extends Exp{
 	
+	public Exp exp;
+	public Stm stm;
+
+	public ESEQ(Stm s, Exp e){
+		exp = e;
+		stm = s;
+	}
 	public void accept(IntVisitor v) {
 		// TODO Auto-generated method stub
 		v.visit(this);
@@ -17,10 +20,11 @@ public class CONST extends Exp{
 		
 	}
 	public LinkedList<Exp> kids() {
-		return null;
+		return new LinkedList<Exp>();
 	}
 
 	public Exp build(LinkedList<Exp> exps) {
-		return this;
+		return null;
 	}
+
 }
