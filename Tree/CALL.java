@@ -23,7 +23,10 @@ public class CALL extends Exp{
 		
 	}
 	public LinkedList<Exp> kids() {
-		return new LinkedList<Exp>();
+		LinkedList<Exp> exs = new LinkedList<Exp>();
+		exs.add(func);
+		exs.add(args);
+		return exs;
 	}
 
 	public Exp build(LinkedList<Exp> exps) {

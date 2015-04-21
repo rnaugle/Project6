@@ -28,13 +28,11 @@ public class JUMP extends Stm{
 		
 	}
 	public LinkedList<Exp> kids() {
-		LinkedList<Exp> exs = new LinkedList<Exp>();
-		exs.add(exp);
-		return exs;
+		return new LinkedList<Exp>();
 	}
 
 	public Stm build(LinkedList<Exp> exps) {
-		return new JUMP(exps.get(0),targets);
+		return null;
 	}
 
 }

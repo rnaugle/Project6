@@ -17,11 +17,13 @@ public class MEM extends Exp{
 	}
 	
 	public LinkedList<Exp> kids() {
-		return new LinkedList<Exp>();
+		LinkedList<Exp> exs = new LinkedList<Exp>();
+		exs.add(exp);
+		return exs;
 	}
 
 	public Exp build(LinkedList<Exp> exps) {
-		return null;
+		return new MEM(exps.get(0));
 	}
 
 }

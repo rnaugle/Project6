@@ -18,10 +18,12 @@ public class EXP extends Stm{
 		
 	}
 	public LinkedList<Exp> kids() {
-		return new LinkedList<Exp>();
+		LinkedList<Exp> exs = new LinkedList<Exp>();
+		exs.add(exp);
+		return exs;
 	}
 
 	public Stm build(LinkedList<Exp> exps) {
-		return null;
+		return new EXP(exps.get(0));
 	}
 }
