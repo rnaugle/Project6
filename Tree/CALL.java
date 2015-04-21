@@ -25,12 +25,15 @@ public class CALL extends Exp{
 	public LinkedList<Exp> kids() {
 		LinkedList<Exp> exs = new LinkedList<Exp>();
 		exs.add(func);
-		exs.add(args);
+		for(Exp e : args){
+			exs.add(e);
+		}
+		
 		return exs;
 	}
 
 	public Exp build(LinkedList<Exp> exps) {
-		return null;
+		return new CALL(exps.remove(0), exps);
 	}
 
 }

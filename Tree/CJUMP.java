@@ -46,8 +46,8 @@ public class CJUMP extends Stm{
 	}
 	public LinkedList<Exp> kids() {
 		LinkedList<Exp> exs = new LinkedList<Exp>();
-		exs.add(func);
-		exs.add(args);
+		exs.add(left);
+		exs.add(right);
 		return exs;
 	}
 
