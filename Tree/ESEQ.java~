@@ -20,7 +20,7 @@ public class ESEQ extends Exp{
 		
 	}
 	public LinkedList<Exp> kids() {
-		return new LinkedList<Exp>();
+		return null;
 	}
 
 	public Exp build(LinkedList<Exp> exps) {
